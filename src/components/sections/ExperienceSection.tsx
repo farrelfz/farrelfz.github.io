@@ -1,89 +1,103 @@
 import { motion } from "framer-motion";
-import { experiences } from "@/data/portfolio";
-import { FadeIn, SectionLabel, StaggerContainer, StaggerItem } from "@/components/ui/AnimationPrimitives";
-import { Award, BookOpen, GraduationCap, Link, Users } from "lucide-react";
-
-const typeConfig: Record<string, { label: string; icon: typeof Award; color: string }> = {
-  achievement: { label: "Achievement", icon: Award, color: "text-amber-500 bg-amber-500/10 border-amber-500/20" },
-  training: { label: "Training & Certification", icon: BookOpen, color: "text-blue-500 bg-blue-500/10 border-blue-500/20" },
-  organization: { label: "Organization", icon: Users, color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/20" },
-};
+import { experiences, achievements } from "@/data/portfolio";
+import { FadeIn, SectionLabel } from "@/components/ui/AnimationPrimitives";
+import { Award, BookOpen, GraduationCap, Trophy, Users, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="section-padding">
+    <section id="experience" className="section-padding bg-muted/10 border-t">
       <div className="container-max">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <SectionLabel>Experience & Achievements</SectionLabel>
+            <SectionLabel>Teaching, Training & Leadership</SectionLabel>
             <FadeIn delay={0.1}>
-              <h2 className="h-display text-4xl sm:text-5xl text-foreground mt-2 leading-tight">
-                Journey Through{" "}
-                <span className="h-editorial italic text-gradient-science">University</span>
+              <h2 className="h-display text-3xl sm:text-4xl text-foreground mt-2">
+                Experience & <span className="text-gradient-science">Achievements</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-sm text-muted-foreground mt-3 max-w-lg leading-relaxed">
-                Pelatihan, pencapaian, dan keterlibatan organisasi yang relevan dengan riset,
-                teknologi pendidikan, dan analitik data selama masa perkuliahan.
+              <p className="text-sm text-muted-foreground mt-2 max-w-xl leading-relaxed">
+                Pengalaman nyata dalam melatih metodologi riset siswa, praktik pengajaran fisika di sekolah, dan kepemimpinan komunikasi riset ilmiah.
               </p>
             </FadeIn>
           </div>
+
+          <FadeIn delay={0.2} direction="left">
+            <Link
+              to="/experience"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[hsl(180_70%_35%)] dark:text-[hsl(180_70%_55%)] hover:underline whitespace-nowrap"
+            >
+              View Full Details
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </FadeIn>
         </div>
 
-        {/* Cards Grid */}
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {experiences.map((exp) => {
-            const cfg = typeConfig[exp.type] ?? typeConfig.training;
-            const Icon = cfg.icon;
-            return (
-              <StaggerItem key={exp.id}>
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.01 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="group flex flex-col h-full p-5 rounded-2xl border bg-card hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-                >
-                  {/* Gradient top accent */}
-                  <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${exp.color}`} />
-
-                  {/* Icon + Year */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="text-3xl">{exp.icon}</div>
-                    <span className="font-mono text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
-                      {exp.year}
-                    </span>
-                  </div>
-
-                  {/* Type badge */}
-                  <span className={`inline-flex items-center gap-1 w-fit px-2 py-0.5 rounded-full text-[9px] font-bold border mb-3 ${cfg.color}`}>
-                    <Icon size={9} /> {cfg.label}
+        {/* Roles Grid (Section 4) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+          {experiences.map((exp, i) => (
+            <motion.div
+              key={exp.id}
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="p-7 rounded-3xl border bg-card shadow-sm flex flex-col justify-between hover:border-[hsl(180_70%_38%/0.4)] transition-all"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl">{exp.icon}</span>
+                  <span className="text-xs font-mono font-bold text-muted-foreground bg-muted px-2.5 py-1 rounded-full border">
+                    {exp.period}
                   </span>
+                </div>
 
-                  {/* Title & Org */}
-                  <h3 className="text-sm font-bold text-foreground leading-snug mb-1 group-hover:text-[hsl(180_70%_38%)] dark:group-hover:text-[hsl(180_70%_60%)] transition-colors">
-                    {exp.title}
-                  </h3>
-                  <p className="text-[11px] text-muted-foreground mb-3 font-medium">{exp.organization}</p>
+                <h3 className="text-lg font-bold text-foreground mb-1 leading-snug">{exp.role}</h3>
+                <div className="text-xs font-semibold text-[hsl(180_70%_35%)] dark:text-[hsl(180_70%_55%)] mb-3">
+                  {exp.organization}
+                </div>
 
-                  {/* Description */}
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-1 line-clamp-3">
-                    {exp.description}
-                  </p>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-5">
+                  {exp.description}
+                </p>
+              </div>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1 mt-auto">
-                    {exp.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-0.5 rounded-md text-[9px] font-medium bg-muted text-muted-foreground border border-border/60">
-                        {tag}
-                      </span>
-                    ))}
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border/60">
+                {exp.tags.map((t) => (
+                  <span key={t} className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-muted text-muted-foreground border border-border/50">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Selected Achievements (Section 6) */}
+        <div>
+          <div className="mb-6">
+            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Recognition</span>
+            <h3 className="h-display text-2xl font-bold text-foreground mt-1">Selected Achievements</h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {achievements.map((ach) => (
+              <div key={ach.id} className="p-5 rounded-2xl border bg-card/60 flex items-start gap-4">
+                <span className="text-2xl flex-shrink-0 mt-0.5">{ach.icon}</span>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
+                      {ach.level}
+                    </span>
+                    <span className="text-xs font-mono text-muted-foreground">{ach.year}</span>
                   </div>
-                </motion.div>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
+                  <div className="text-sm font-bold text-foreground leading-tight">{ach.title}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">{ach.organizer}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

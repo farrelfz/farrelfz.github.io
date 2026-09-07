@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-import { Github, Instagram, Linkedin, Mail, MessageCircle, BookOpen } from "lucide-react";
+import { Github, Instagram, Mail, MessageCircle, Twitter } from "lucide-react";
 import { profile } from "@/data/portfolio";
 
 const socialItems = [
   { icon: Github, href: profile.socials.github, label: "GitHub", color: "hover:text-foreground" },
-  { icon: Linkedin, href: profile.socials.linkedin, label: "LinkedIn", color: "hover:text-blue-500" },
+  { icon: Twitter, href: profile.socials.twitter, label: "Twitter / X", color: "hover:text-sky-500" },
   { icon: Instagram, href: profile.socials.instagram, label: "Instagram", color: "hover:text-pink-500" },
-  { icon: BookOpen, href: profile.socials.googleScholar, label: "Scholar", color: "hover:text-emerald-500" },
   { icon: Mail, href: `mailto:${profile.email}`, label: "Email", color: "hover:text-orange-500" },
-  { icon: MessageCircle, href: (profile.socials as Record<string, string>).whatsapp || "#", label: "WhatsApp", color: "hover:text-green-500" },
+  { icon: MessageCircle, href: profile.socials.whatsapp, label: "WhatsApp", color: "hover:text-green-500" },
 ];
 
 export function FloatingSocials() {

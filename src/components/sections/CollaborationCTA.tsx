@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/AnimationPrimitives";
 import { ArrowRight, Mail, MessageSquare } from "lucide-react";
+import { profile } from "@/data/portfolio";
 
 export function CollaborationCTA() {
   return (
@@ -70,11 +71,11 @@ export function CollaborationCTA() {
                 </Link>
 
                 <a
-                  href={`mailto:${import.meta.env.VITE_EMAIL || "farreldava@gmail.com"}`}
+                  href={`mailto:${profile.email}`}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-medium border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-200"
                 >
                   <MessageSquare size={15} />
-                  farreldava@gmail.com
+                  {profile.email}
                 </a>
               </div>
             </FadeIn>

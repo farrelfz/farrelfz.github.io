@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { profile } from "@/data/portfolio";
 import { FadeIn, SectionLabel } from "@/components/ui/AnimationPrimitives";
-import { Github, Instagram, Linkedin, Mail, MapPin, MessageSquare, Send } from "lucide-react";
+import { Github, Instagram, Mail, MapPin, MessageSquare, Send, Twitter } from "lucide-react";
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -30,8 +30,7 @@ export function Contact() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-                Whether you're a researcher, educator, institution, or fellow builder — I'm always
-                open to meaningful conversations about physics education, EdTech, and collaborative work.
+                Open to research collaboration, educational technology projects, and science/AI education initiatives.
               </p>
             </FadeIn>
 
@@ -44,8 +43,19 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground">Email</div>
-                    <a href={`mailto:${profile.email}`} className="text-sm font-medium text-foreground hover:text-[hsl(180_70%_38%)] transition-colors">
+                    <a href={`mailto:${profile.email}`} className="text-sm font-semibold text-foreground hover:text-[hsl(180_70%_38%)] transition-colors">
                       {profile.email}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-muted flex items-center justify-center flex-shrink-0">
+                    <MessageSquare size={15} className="text-muted-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground">WhatsApp</div>
+                    <a href={profile.socials.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-foreground hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                      +62 812-9016-7472
                     </a>
                   </div>
                 </div>
@@ -55,7 +65,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground">Location</div>
-                    <div className="text-sm font-medium text-foreground">{profile.location}</div>
+                    <div className="text-sm font-semibold text-foreground">{profile.location}</div>
                   </div>
                 </div>
               </div>
@@ -63,10 +73,10 @@ export function Contact() {
 
             {/* Socials */}
             <FadeIn delay={0.4}>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 {[
                   { icon: Github, href: profile.socials.github, label: "GitHub" },
-                  { icon: Linkedin, href: profile.socials.linkedin, label: "LinkedIn" },
+                  { icon: Twitter, href: profile.socials.twitter, label: "Twitter / X" },
                   { icon: Instagram, href: profile.socials.instagram, label: "Instagram" },
                 ].map(({ icon: Icon, href, label }) => (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"

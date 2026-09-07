@@ -2,46 +2,49 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { projects } from "@/data/portfolio";
 import { FadeIn, SectionLabel, StaggerContainer, StaggerItem } from "@/components/ui/AnimationPrimitives";
-import { ArrowRight, ExternalLink, Github, Layers, Zap } from "lucide-react";
+import { ArrowRight, ExternalLink, GitBranch, Github, Layers, Sparkles } from "lucide-react";
 
-const statusColors: Record<string, string> = {
-  Active: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-  Beta: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-  Complete: "bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20",
+const statusBadgeStyles: Record<string, string> = {
+  "Active Development": "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+  "Designed / In Development": "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
+  Completed: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
   "In Development": "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
-  "Research Phase": "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
 };
 
 export function FeaturedProjects() {
-  const featured = projects.filter((p) => p.featured);
-
   return (
-    <section id="projects" className="section-padding bg-muted/20">
+    <section id="projects" className="section-padding bg-muted/20 border-t">
       <div className="container-max">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <SectionLabel>Flagship Projects</SectionLabel>
+            <SectionLabel>Flagship Systems & Research</SectionLabel>
             <FadeIn delay={0.1}>
-              <h2 className="h-display text-4xl sm:text-5xl text-foreground mt-2 leading-tight">
-                Things I've <span className="text-gradient-science">Built</span>
+              <h2 className="h-display text-3xl sm:text-4xl lg:text-5xl text-foreground mt-2">
+                Flagship <span className="text-gradient-science">Projects</span>
               </h2>
             </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-sm sm:text-base text-muted-foreground max-w-xl mt-2 leading-relaxed">
+                Sistem perangkat lunak riset, knowledge graph, analitik diskursus ilmiah, dan platform pembelajaran fisika interaktif berbasis bukti empiris.
+              </p>
+            </FadeIn>
           </div>
+
           <FadeIn delay={0.2} direction="left">
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[hsl(180_70%_35%)] dark:text-[hsl(180_70%_55%)] hover:underline whitespace-nowrap"
             >
-              View all projects
+              View Full Architecture & Projects
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </FadeIn>
         </div>
 
         {/* Projects grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {featured.map((project, i) => (
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {projects.map((project, i) => (
             <StaggerItem key={project.id}>
               <ProjectCard project={project} index={i} />
             </StaggerItem>
@@ -52,79 +55,105 @@ export function FeaturedProjects() {
   );
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
-  const isLarge = index === 0;
-
+function ProjectCard({ project }: { project: typeof projects[0]; index: number }) {
   return (
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`group relative flex flex-col rounded-2xl border bg-card overflow-hidden transition-shadow duration-300 hover:shadow-xl ${
-        isLarge ? "md:col-span-2 lg:col-span-1" : ""
-      }`}
+      className="h-full flex flex-col justify-between rounded-3xl border bg-card p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-[hsl(180_70%_38%/0.4)] transition-all duration-300 relative overflow-hidden"
     >
-      {/* Image container */}
-      <div className="relative w-full h-48 overflow-hidden bg-muted">
-        <div className={`absolute inset-0 bg-gradient-to-t from-card to-transparent z-10`} />
-        {project.image && (
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+      {/* Top Meta Bar */}
+      <div>
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-muted border text-muted-foreground">
+            {project.category}
+          </span>
+          <div className="flex items-center gap-2">
+            <span className={`text-[10px] font-semibold px-2.5 py-0.5 rounded-full border ${statusBadgeStyles[project.status] || "bg-muted text-muted-foreground"}`}>
+              {project.status}
+            </span>
+            <span className="text-xs font-mono font-bold text-muted-foreground">{project.year}</span>
+          </div>
+        </div>
+
+        {/* Title & Subtitle */}
+        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1 leading-snug">
+          {project.title}
+        </h3>
+        <div className="text-xs font-semibold text-[hsl(180_70%_35%)] dark:text-[hsl(180_70%_55%)] mb-3">
+          {project.subtitle}
+        </div>
+        
+        <div className="text-[11px] font-mono text-muted-foreground mb-4 pb-3 border-b border-border/60">
+          <strong className="text-foreground/80">Domain:</strong> {project.domain}
+        </div>
+
+        {/* Problem & Approach */}
+        <div className="space-y-3 text-xs text-muted-foreground leading-relaxed mb-6">
+          <p>
+            <strong className="text-foreground font-semibold">Problem:</strong> {project.problem}
+          </p>
+          <p>
+            <strong className="text-foreground font-semibold">Approach:</strong> {project.approach}
+          </p>
+        </div>
+
+        {/* Verified Metrics / Highlights */}
+        {project.metrics && project.metrics.length > 0 && (
+          <div className="p-3.5 rounded-2xl bg-muted/50 border border-border/50 mb-6">
+            <div className="text-[10px] font-mono uppercase tracking-wider font-bold text-foreground mb-1.5 flex items-center gap-1">
+              <Sparkles size={12} className="text-amber-500" /> Key Evidence & Metrics:
+            </div>
+            <ul className="grid grid-cols-1 gap-1 text-[11px] text-muted-foreground">
+              {project.metrics.map((m) => (
+                <li key={m} className="flex items-center gap-1.5">
+                  <span className="w-1 h-1 rounded-full bg-[hsl(180_70%_38%)]" />
+                  {m}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Disclaimer / Note if designed */}
+        {"note" in project && project.note && (
+          <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/20 text-[11px] text-amber-700 dark:text-amber-300 mb-6 italic leading-relaxed">
+            * {project.note}
+          </div>
         )}
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col flex-1 p-6 relative z-20 -mt-6">
-        {/* Meta row */}
-        <div className="flex items-center justify-between mb-4">
-          <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold border ${statusColors[project.status] || ""}`}>
-            {project.status}
-          </span>
-          <span className="text-xs text-muted-foreground font-mono">{project.year}</span>
-        </div>
-
-        {/* Title */}
-        <h3 className="text-lg font-bold text-foreground mb-1 leading-snug group-hover:text-gradient-science transition-all">
-          {project.title}
-        </h3>
-        <p className="text-xs font-medium text-muted-foreground mb-3">{project.subtitle}</p>
-
-        {/* Tech stack */}
-        <div className="flex flex-wrap gap-1.5 mb-5 mt-auto">
-          {project.techStack.slice(0, 3).map((tech) => (
-            <span key={tech} className="badge-tag text-[10px]">{tech}</span>
+      {/* Bottom Tech & Links */}
+      <div className="pt-4 border-t border-border/60 mt-auto">
+        <div className="flex flex-wrap gap-1.5 mb-5">
+          {project.techStack.map((tech) => (
+            <span key={tech} className="px-2 py-0.5 rounded-md text-[10px] font-medium bg-muted text-muted-foreground border border-border/50">
+              {tech}
+            </span>
           ))}
-          {project.techStack.length > 3 && (
-            <span className="badge-tag text-[10px]">+{project.techStack.length - 3}</span>
-          )}
         </div>
 
-        {/* Footer actions */}
-        <div className="flex items-center gap-3 pt-4 border-t border-border">
+        <div className="flex items-center justify-between gap-4">
           <Link
             to={`/projects/${project.id}`}
-            className="flex items-center gap-1.5 text-xs font-semibold text-foreground hover:text-[hsl(180_70%_38%)] transition-colors group/link"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-[hsl(180_70%_38%)] transition-colors group/link"
           >
-            <Layers size={12} />
-            Case Study
-            <ArrowRight size={11} className="transition-transform group-hover/link:translate-x-0.5" />
+            <Layers size={13} />
+            System Architecture
+            <ArrowRight size={12} className="transition-transform group-hover/link:translate-x-0.5" />
           </Link>
-          <div className="flex items-center gap-2 ml-auto">
-            {project.githubUrl && (
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-                className="w-7 h-7 flex items-center justify-center rounded-lg border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all">
-                <Github size={12} />
-              </a>
-            )}
-            {project.demoUrl && (
-              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer"
-                className="w-7 h-7 flex items-center justify-center rounded-lg border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all">
-                <ExternalLink size={12} />
-              </a>
-            )}
-          </div>
+
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border bg-background hover:bg-muted text-xs font-semibold text-foreground transition-all"
+            >
+              <Github size={13} />
+              Repository
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

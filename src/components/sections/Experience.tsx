@@ -28,8 +28,8 @@ export function Teaching() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                These frameworks inform every product I build: from how AIH Fisika scaffolds
-                problem-solving to how FisikaSeru structures its simulation sequences.
+                These frameworks inform every project I develop: from how Conceptra structures
+                misconception remediation to how PHYSION and FisikaSeru scaffold interactive simulations.
               </p>
             </FadeIn>
           </div>

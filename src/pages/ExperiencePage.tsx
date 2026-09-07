@@ -1,191 +1,134 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { experiences } from "@/data/portfolio";
+import { experiences, achievements } from "@/data/portfolio";
 import { FadeIn, SectionLabel } from "@/components/ui/AnimationPrimitives";
-import { Award, BookOpen, GraduationCap, Trophy, Users } from "lucide-react";
-
-const typeConfig: Record<string, { label: string; icon: typeof Award; color: string; accent: string }> = {
-  achievement: {
-    label: "Achievements",
-    icon: Trophy,
-    color: "text-amber-500 bg-amber-500/10 border-amber-500/20",
-    accent: "from-amber-500 to-orange-500",
-  },
-  training: {
-    label: "Training & Certifications",
-    icon: BookOpen,
-    color: "text-blue-500 bg-blue-500/10 border-blue-500/20",
-    accent: "from-blue-500 to-cyan-500",
-  },
-  organization: {
-    label: "Organizations",
-    icon: Users,
-    color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/20",
-    accent: "from-indigo-500 to-blue-500",
-  },
-};
-
-const categories = ["All", "achievement", "training", "organization"] as const;
-type Category = (typeof categories)[number];
+import { Award, BookOpen, CheckCircle, GraduationCap, Trophy, Users } from "lucide-react";
 
 const ExperiencePage = () => {
-  const [activeTab, setActiveTab] = useState<Category>("All");
-
   useEffect(() => {
-    document.title = "Experience — Muhamad Farrel Dava Fauzan";
+    document.title = "Experience & Achievements — Muhamad Farrel Dava Fauzan";
   }, []);
-
-  const filtered = activeTab === "All" ? experiences : experiences.filter((e) => e.type === activeTab);
-
-  const counts = Object.fromEntries(
-    categories.slice(1).map((c) => [c, experiences.filter((e) => e.type === c).length])
-  );
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-14 bg-hero-light relative overflow-hidden">
+        <section className="pt-32 pb-16 bg-hero-light relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-30 dark:opacity-15 pointer-events-none" />
           <div className="container-max relative z-10">
             <FadeIn>
               <div className="label-science mb-6 w-fit flex items-center gap-1.5">
-                <GraduationCap size={12} />
-                Academic & Non-Academic
+                <GraduationCap size={13} />
+                Academic & Educational Roles
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h1 className="h-display text-5xl sm:text-6xl lg:text-7xl text-foreground mb-5 leading-tight">
-                Experience &{" "}
-                <span className="text-gradient-science">Achievements</span>
+              <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-5 leading-tight">
+                Professional Experience & <br />
+                <span className="text-gradient-science">Selected Achievements</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
-                Pelatihan, sertifikasi, pencapaian kompetisi, dan keterlibatan organisasi
-                yang relevan selama masa perkuliahan — semua linear dengan riset,
-                teknologi pendidikan, dan analitik data.
+              <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
+                Peran nyata dalam memfasilitasi riset siswa (KIR/OPSI), pengajaran fisika terintegrasi STEM di sekolah menengah, dan kepemimpinan komunikasi ilmiah mahasiswa.
               </p>
             </FadeIn>
           </div>
         </section>
 
-        {/* Summary row */}
-        <section className="py-8 border-b bg-card/50">
+        {/* Section 4: Professional Experience */}
+        <section className="section-padding border-t">
           <div className="container-max">
-            <div className="grid grid-cols-3 gap-4 max-w-lg">
-              {(Object.entries(typeConfig) as [string, typeof typeConfig[string]][]).map(([key, cfg]) => {
-                const Icon = cfg.icon;
-                return (
-                  <button
-                    key={key}
-                    onClick={() => setActiveTab(key as Category)}
-                    className={`flex flex-col items-center gap-2 p-4 rounded-2xl border transition-all duration-200 ${
-                      activeTab === key ? `${cfg.color} scale-105` : "bg-card hover:bg-muted/50"
-                    }`}
-                  >
-                    <Icon size={18} className={activeTab === key ? "" : "text-muted-foreground"} />
-                    <span className="text-lg font-extrabold">{counts[key]}</span>
-                    <span className="text-[10px] text-center font-medium text-muted-foreground leading-tight">{cfg.label}</span>
-                  </button>
-                );
-              })}
+            <div className="mb-10">
+              <SectionLabel>Verified Experience</SectionLabel>
+              <h2 className="h-display text-3xl sm:text-4xl text-foreground mt-2">
+                Professional & Academic Roles
+              </h2>
             </div>
-          </div>
-        </section>
 
-        {/* Filter tabs */}
-        <section className="py-6 border-b sticky top-[64px] z-30 bg-background/90 backdrop-blur-xl">
-          <div className="container-max">
-            <div className="flex flex-wrap gap-2">
-              {categories.map((cat) => {
-                const label = cat === "All" ? "All" : typeConfig[cat].label;
-                const count = cat === "All" ? experiences.length : counts[cat];
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveTab(cat)}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border inline-flex items-center gap-1.5 ${
-                      activeTab === cat
-                        ? "bg-foreground text-background border-foreground"
-                        : "bg-card text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground"
-                    }`}
-                  >
-                    {label}
-                    <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-mono ${activeTab === cat ? "bg-background/20" : "bg-muted"}`}>
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Cards */}
-        <section className="section-padding">
-          <div className="container-max">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-              >
-                {filtered.map((exp, i) => {
-                  const cfg = typeConfig[exp.type] ?? typeConfig.training;
-                  const Icon = cfg.icon;
-                  return (
-                    <motion.div
-                      key={exp.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: i * 0.05 }}
-                      whileHover={{ y: -5, scale: 1.01 }}
-                      className="group flex flex-col h-full p-6 rounded-2xl border bg-card hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-                    >
-                      <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${exp.color}`} />
-
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="text-4xl">{exp.icon}</div>
-                        <span className="font-mono text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
-                          {exp.year}
-                        </span>
+            <div className="space-y-8 mb-20">
+              {experiences.map((exp, idx) => (
+                <FadeIn key={exp.id} delay={idx * 0.1}>
+                  <div className="p-8 sm:p-10 rounded-3xl border bg-card shadow-sm space-y-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-5">
+                      <div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl">{exp.icon}</span>
+                          <div>
+                            <h3 className="text-2xl font-bold text-foreground leading-tight">{exp.role}</h3>
+                            <div className="text-sm font-semibold text-[hsl(180_70%_35%)] dark:text-[hsl(180_70%_55%)] mt-0.5">
+                              {exp.organization}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-
-                      <span className={`inline-flex items-center gap-1 w-fit px-2.5 py-1 rounded-full text-[10px] font-bold border mb-3 ${cfg.color}`}>
-                        <Icon size={10} /> {cfg.label}
+                      <span className="font-mono text-xs font-bold px-3 py-1.5 rounded-full border bg-muted/70 text-foreground self-start sm:self-center">
+                        {exp.period}
                       </span>
+                    </div>
 
-                      <h3 className="text-sm font-bold text-foreground leading-snug mb-1 group-hover:text-[hsl(180_70%_38%)] dark:group-hover:text-[hsl(180_70%_60%)] transition-colors">
-                        {exp.title}
-                      </h3>
-                      <p className="text-[11px] text-muted-foreground mb-3 font-medium">{exp.organization}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {exp.description}
+                    </p>
 
-                      <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-1">
-                        {exp.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-border">
-                        {exp.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 rounded-md text-[9px] font-medium bg-muted text-muted-foreground border border-border/60"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                    <div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wider mb-2.5">
+                        Key Responsibilities & Deliverables:
                       </div>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            </AnimatePresence>
+                      <ul className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+                        {exp.highlights.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2 p-3 rounded-xl bg-muted/40 text-xs text-muted-foreground">
+                            <CheckCircle size={14} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border/50">
+                      {exp.tags.map((tag) => (
+                        <span key={tag} className="badge-tag text-[10px] font-mono">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+
+            {/* Section 6: Selected Achievements */}
+            <div>
+              <div className="mb-8">
+                <SectionLabel>Competition & Funding Recognition</SectionLabel>
+                <h2 className="h-display text-3xl sm:text-4xl text-foreground mt-2">
+                  Selected Achievements
+                </h2>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Pengakuan dan pendanaan kompetisi ilmiah tingkat nasional maupun universitas.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {achievements.map((ach) => (
+                  <div key={ach.id} className="p-6 rounded-2xl border bg-card flex items-start gap-4">
+                    <span className="text-3xl flex-shrink-0">{ach.icon}</span>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-muted text-muted-foreground border">
+                          {ach.level}
+                        </span>
+                        <span className="text-xs font-mono font-bold text-muted-foreground">{ach.year}</span>
+                      </div>
+                      <h4 className="font-bold text-base text-foreground leading-snug">{ach.title}</h4>
+                      <p className="text-xs text-muted-foreground">{ach.organizer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       </main>

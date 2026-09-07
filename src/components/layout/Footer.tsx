@@ -1,30 +1,29 @@
 import { Link } from "react-router-dom";
-import { Atom, Github, Linkedin, BookOpen, Instagram, Mail, ArrowUpRight, MessageCircle } from "lucide-react";
-import { profile, navigation } from "@/data/portfolio";
+import { Atom, Github, Instagram, Mail, MessageCircle, Twitter } from "lucide-react";
+import { profile } from "@/data/portfolio";
 
 const socialLinks = [
   { icon: Github, href: profile.socials.github, label: "GitHub" },
-  { icon: Linkedin, href: profile.socials.linkedin, label: "LinkedIn" },
+  { icon: Twitter, href: profile.socials.twitter, label: "Twitter / X" },
   { icon: Instagram, href: profile.socials.instagram, label: "Instagram" },
-  { icon: BookOpen, href: profile.socials.googleScholar, label: "Google Scholar" },
-  { icon: MessageCircle, href: (profile.socials as Record<string, string>).whatsapp || "#", label: "WhatsApp" },
+  { icon: MessageCircle, href: profile.socials.whatsapp, label: "WhatsApp" },
 ];
 
 const footerNav = [
   {
-    heading: "Work",
+    heading: "Research & Work",
     links: [
-      { label: "Projects", href: "/projects" },
       { label: "Research", href: "/research" },
-      { label: "Publications", href: "/publications" },
+      { label: "Projects", href: "/projects" },
       { label: "Writing", href: "/writing" },
+      { label: "Selected Works", href: "/publications" },
     ],
   },
   {
-    heading: "About",
+    heading: "Profile",
     links: [
+      { label: "About", href: "/#about" },
       { label: "Experience", href: "/experience" },
-      { label: "Timeline", href: "/timeline" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -35,7 +34,6 @@ export function Footer() {
 
   return (
     <footer className="relative border-t bg-card/50 backdrop-blur-sm overflow-hidden">
-      {/* Subtle grid */}
       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
 
       <div className="container-max relative z-10 py-16">
@@ -43,14 +41,17 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-5 group w-fit">
-              <div className="relative flex items-center justify-center w-9 h-9 rounded-lg overflow-hidden">
+              <div className="relative flex items-center justify-center w-9 h-9 rounded-xl overflow-hidden shadow-sm">
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(180_70%_38%)] to-[hsl(217_91%_60%)]" />
                 <Atom size={18} className="relative z-10 text-white" strokeWidth={2} />
               </div>
-              <span className="text-base font-bold tracking-tight">mfarreldavaf</span>
+              <div>
+                <span className="text-base font-bold tracking-tight text-foreground block">Muhamad Farrel Dava Fauzan</span>
+                <span className="text-[11px] text-muted-foreground font-mono">Physics Education · UNJ</span>
+              </div>
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">
-              Physics Education undergraduate at Universitas Negeri Jakarta — building the future of scientific learning through research, AI, and interactive experiences.
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-sm mb-6">
+              Physics Education Researcher, Educational Technology Developer & AI for Education practitioner. Building evidence-based educational systems.
             </p>
             <div className="flex items-center gap-2">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -60,17 +61,17 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex items-center justify-center w-9 h-9 rounded-lg border text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-muted transition-all duration-200"
+                  className="flex items-center justify-center w-9 h-9 rounded-xl border text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-muted transition-all duration-200"
                 >
-                  <Icon size={15} />
+                  <Icon size={14} />
                 </a>
               ))}
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center justify-center w-9 h-9 rounded-lg border text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-muted transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-xl border text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-muted transition-all duration-200"
                 aria-label="Email"
               >
-                <Mail size={15} />
+                <Mail size={14} />
               </a>
             </div>
           </div>
@@ -78,7 +79,7 @@ export function Footer() {
           {/* Nav groups */}
           {footerNav.map((group) => (
             <div key={group.heading}>
-              <h4 className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-4">
+              <h4 className="text-xs font-bold tracking-widest uppercase text-foreground mb-4">
                 {group.heading}
               </h4>
               <ul className="space-y-2.5">
@@ -86,7 +87,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       to={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors animated-underline"
+                      className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -98,25 +99,18 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="divider-gradient mb-8" />
+        <div className="h-px bg-border mb-8" />
 
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {year} Muhamad Farrel Dava Fauzan. Built with research-grade attention to detail.
+            © {year} Muhamad Farrel Dava Fauzan. Built with evidence-based research integrity.
           </p>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Available for collaboration
+              Open to research collaboration
             </span>
-            <a
-              href={profile.cvUrl}
-              download
-              className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Download CV <ArrowUpRight size={12} />
-            </a>
           </div>
         </div>
       </div>

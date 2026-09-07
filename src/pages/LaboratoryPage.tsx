@@ -12,7 +12,11 @@ const LaboratoryPage = () => {
     document.title = "Laboratory — Farrel Dava | Virtual Physics Labs";
   }, []);
 
-  const virtualLabs = projects.filter((p) => p.category === "Virtual Laboratory" || p.tags.includes("Simulation"));
+  const virtualLabs = projects.filter(
+    (p) =>
+      p.category.toLowerCase().includes("simulation") ||
+      p.tags.some((t) => t.toLowerCase().includes("simulation") || t.toLowerCase().includes("virtual lab"))
+  );
 
   return (
     <div className="min-h-screen bg-background">

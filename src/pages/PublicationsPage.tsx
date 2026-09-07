@@ -1,19 +1,15 @@
 import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { publications } from "@/data/portfolio";
+import { projects, profile } from "@/data/portfolio";
 import { FadeIn, SectionLabel, StaggerContainer, StaggerItem } from "@/components/ui/AnimationPrimitives";
 import { motion } from "framer-motion";
-import { ExternalLink, Quote } from "lucide-react";
-
-const typeColors: Record<string, string> = {
-  "Journal Article": "from-blue-500/15 to-indigo-500/15 border-blue-500/20 text-blue-600 dark:text-blue-400",
-  "Conference Paper": "from-violet-500/15 to-purple-500/15 border-violet-500/20 text-violet-600 dark:text-violet-400",
-};
+import { ExternalLink, Github, Layers, Sparkles, AlertCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const PublicationsPage = () => {
   useEffect(() => {
-    document.title = "Publications — Farrel Dava | Physics Education Researcher";
+    document.title = "Research & Selected Works — Muhamad Farrel Dava Fauzan";
   }, []);
 
   return (
@@ -24,18 +20,16 @@ const PublicationsPage = () => {
           <div className="absolute inset-0 bg-grid opacity-30 dark:opacity-15 pointer-events-none" />
           <div className="container-max relative z-10">
             <FadeIn>
-              <div className="label-research mb-6 w-fit">📄 Academic Output</div>
+              <div className="label-research mb-6 w-fit">🔬 Academic & Research Output</div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h1 className="h-display text-5xl sm:text-6xl lg:text-7xl text-foreground mb-5 leading-tight">
-                Publications &{" "}
-                <span className="text-gradient-warm">Research</span>
+              <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-5 leading-tight">
+                Research & <span className="text-gradient-primary">Selected Works</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
-                Peer-reviewed articles, conference proceedings, and academic contributions
-                at the intersection of physics education, AI, and learning technology.
+              <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
+                Kompilasi sistem riset komputasional, pipeline analisis wacana sains, dan repositori pengetahuan pendidikan fisika.
               </p>
             </FadeIn>
           </div>
@@ -43,67 +37,81 @@ const PublicationsPage = () => {
 
         <section className="section-padding">
           <div className="container-max">
-            <StaggerContainer className="flex flex-col gap-5">
-              {publications.map((pub, i) => (
-                <StaggerItem key={pub.id}>
-                  <motion.div
-                    whileHover={{ x: 4 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className="group flex gap-4 p-7 rounded-2xl border bg-card hover:shadow-lg transition-all duration-300"
-                  >
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2 mb-3">
-                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold border bg-gradient-to-r ${typeColors[pub.type] || ""}`}>
-                          {pub.type}
+            {/* Academic Integrity Notice */}
+            <FadeIn>
+              <div className="flex items-start gap-3.5 p-5 rounded-2xl border bg-card/60 text-xs text-muted-foreground mb-10">
+                <AlertCircle size={18} className="text-[hsl(180_70%_35%)] flex-shrink-0 mt-0.5" />
+                <div className="leading-relaxed">
+                  <strong className="text-foreground font-semibold">Catatan Integritas Akademik:</strong> Publikasi artikel jurnal dan prosiding konferensi saat ini sedang dalam proses penyusunan manuskrip dan penelaahan sejawat (peer-review). Seluruh karya komputasional, dataset, dan arsitektur di bawah ini dapat diverifikasi langsung melalui repositori kode sumber terbuka di GitHub.
+                </div>
+              </div>
+            </FadeIn>
+
+            <StaggerContainer className="flex flex-col gap-6">
+              {projects.map((item, i) => (
+                <StaggerItem key={item.id}>
+                  <div className="p-7 rounded-3xl border bg-card hover:shadow-lg transition-all duration-300">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-muted text-muted-foreground">
+                          {item.category}
                         </span>
-                        <span className="text-xs font-bold font-mono text-muted-foreground">{pub.year}</span>
-                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                          {pub.status}
-                        </span>
+                        <span className="text-xs font-mono text-muted-foreground">{item.year}</span>
                       </div>
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full border bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20">
+                        {item.status}
+                      </span>
+                    </div>
 
-                      <h2 className="text-base font-bold text-foreground leading-snug mb-2 group-hover:text-[hsl(180_70%_30%)] dark:group-hover:text-[hsl(180_70%_60%)] transition-colors">
-                        {pub.title}
-                      </h2>
+                    <h2 className="text-xl font-bold text-foreground mb-1 leading-snug">
+                      {item.title}
+                    </h2>
+                    <p className="text-xs font-medium text-[hsl(180_70%_35%)] dark:text-[hsl(180_70%_55%)] mb-3">
+                      {item.subtitle}
+                    </p>
 
-                      <p className="text-xs text-muted-foreground mb-1">
-                        <span className="font-semibold">{pub.authors}</span>
-                      </p>
-                      <p className="text-xs text-muted-foreground italic mb-4">{pub.journal}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
+                      {item.summary}
+                    </p>
 
-                      {pub.abstract && (
-                        <p className="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-3 border-l-2 border-border pl-3">
-                          {pub.abstract}
-                        </p>
-                      )}
+                    {item.metrics && (
+                      <div className="p-3 rounded-xl bg-muted/40 border text-xs text-muted-foreground mb-4">
+                        <strong className="text-foreground">Bukti & Metrik Terverifikasi:</strong>
+                        <ul className="mt-1 space-y-0.5">
+                          {item.metrics.map((m) => (
+                            <li key={m}>• {m}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
+                    <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border">
                       <div className="flex flex-wrap gap-1.5">
-                        {pub.tags.map((tag) => (
+                        {item.tags.map((tag) => (
                           <span key={tag} className="badge-tag text-[10px]">{tag}</span>
                         ))}
                       </div>
-                    </div>
 
-                    {/* Actions */}
-                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                      <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer"
-                        className="w-9 h-9 flex items-center justify-center rounded-xl border text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
-                        title="View Publication">
-                        <ExternalLink size={14} />
-                      </a>
-                      <button
-                        className="w-9 h-9 flex items-center justify-center rounded-xl border text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
-                        title="Cite"
-                        onClick={() => {
-                          const citation = `${pub.authors} (${pub.year}). ${pub.title}. ${pub.journal}. https://doi.org/${pub.doi}`;
-                          navigator.clipboard?.writeText(citation);
-                        }}
-                      >
-                        <Quote size={14} />
-                      </button>
+                      <div className="flex items-center gap-3">
+                        <Link
+                          to={`/projects/${item.id}`}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-[hsl(180_70%_38%)]"
+                        >
+                          <Layers size={13} /> Arsitektur Sistem
+                        </Link>
+                        {item.githubUrl && (
+                          <a
+                            href={item.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border bg-background hover:bg-muted text-xs font-semibold text-foreground transition-all"
+                          >
+                            <Github size={13} /> Repositori
+                          </a>
+                        )}
+                      </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </StaggerItem>
               ))}
             </StaggerContainer>

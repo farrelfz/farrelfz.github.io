@@ -1,22 +1,28 @@
 // ============================================================
-// PORTFOLIO DATA — Muhamad Farrel Dava Fauzan
+// PORTFOLIO DATA — MUHAMAD FARREL DAVA FAUZAN
+// Authoritative Source of Truth: User CV & Verified GitHub Repositories
+// No fabricated publications, no fake DOIs, no dummy metrics.
 // ============================================================
 
 export const siteConfig = {
-  name: "Farrel Dava",
-  title: "Muhamad Farrel Dava Fauzan — Researcher × Educator × Builder × Designer",
+  name: "Muhamad Farrel Dava Fauzan",
+  shortName: "Farrel Dava",
+  title: "Muhamad Farrel Dava Fauzan | Physics Education Researcher, EdTech Developer & AI for Education",
   description:
-    "Physics Education undergraduate at Universitas Negeri Jakarta. Building the future of scientific learning through AI, simulation, and human-centered educational technology.",
-  url: "https://farreldava.com",
-  ogImage: "/og-image.png",
+    "Portfolio of Muhamad Farrel Dava Fauzan — Physics Education Researcher, Educational Technology Developer, and AI for Education practitioner exploring AI, NLP, learning analytics, and computational research.",
+  url: "https://farrelfz.github.io",
+  ogImage: "/avatar.jpg",
   keywords: [
+    "Muhamad Farrel Dava Fauzan",
+    "Physics Education Research",
     "Physics Education",
     "Educational Technology",
-    "AI in Education",
-    "Interactive Simulation",
-    "Scientific Visualization",
-    "Learning Science",
-    "EdTech",
+    "AI for Education",
+    "AI in Physics Education",
+    "Physics Research",
+    "NLP Education",
+    "Learning Analytics",
+    "Educational Technology Indonesia",
     "Universitas Negeri Jakarta",
   ],
 };
@@ -24,755 +30,619 @@ export const siteConfig = {
 export const profile = {
   name: "Muhamad Farrel Dava Fauzan",
   shortName: "Farrel Dava",
-  role: "Researcher · Educator · Builder · Writer · Data Analyst",
+  role: "Physics Education Researcher · Educational Technology Developer · AI for Education",
   tagline:
-    "Building the Future of Physics Learning Through Research, AI, and Interactive Experiences.",
+    "Building evidence-based educational systems at the intersection of physics education, AI, and computational research.",
   secondaryTagline:
-    "Researching, Building, and Writing Better Ways to Learn Science.",
-  location: "Jakarta, Indonesia",
+    "Exploring how AI and computational methods can strengthen Physics Education Research and educational technology.",
+  location: "Jakarta Barat, Indonesia",
   institution: "Universitas Negeri Jakarta",
-  department: "Physics Education",
+  department: "Bachelor of Education — Pendidikan Fisika",
+  educationPeriod: "2022 – Sekarang",
   email: "mfarreldava23@gmail.com",
-  cvUrl: "/assets/CV_FarrelDava.pdf",
+  phone: "081290167472",
+  whatsappUrl: "https://wa.me/6281290167472",
+  cvUrl: "/assets/CV_Muhamad_Farrel_Dava_Fauzan.pdf",
   avatar: "/avatar.jpg",
-  bio: `I am a Physics Education undergraduate at Universitas Negeri Jakarta, operating at the intersection of educational research, artificial intelligence, and interactive simulation. My work focuses on redesigning how students experience and internalize physics — moving beyond memorization into genuine scientific understanding through technology-mediated inquiry.`,
-  philosophy: [
+  bio: `Mahasiswa Pendidikan Fisika di Universitas Negeri Jakarta yang membangun fondasi riset dan educational technology berbasis bukti nyata, bukan sekadar minat. Mengembangkan sistem AI-assisted untuk riset pendidikan fisika, platform pembelajaran fisika interaktif, serta knowledge graph miskonsepsi fisika berbasis NLP.
+
+Berpengalaman menyusun materi pelatihan riset siswa (KIR/OPSI), praktik mengajar fisika di jenjang SMA, serta memimpin divisi komunikasi ilmiah pada organisasi riset mahasiswa.
+
+Menggabungkan fondasi Physics Education dengan computational methods, data analysis, dan pengembangan aplikasi untuk membangun solusi pendidikan yang terukur — dengan spesialisasi yang sedang berkembang pada AI for Physics Education Research.`,
+  conceptualFramework: [
     {
-      id: "phi-1",
-      statement: "Physics should be experienced, not memorized.",
-      elaboration:
-        "True understanding emerges from interaction, experimentation, and discovery — not passive consumption of equations.",
+      domain: "Physics Education",
+      role: "Provides the Domain",
+      description: "Grounded in conceptual change theory, misconception identification, and inquiry-based pedagogy.",
       icon: "⚛️",
     },
     {
-      id: "phi-2",
-      statement: "AI should guide curiosity, not replace thinking.",
-      elaboration:
-        "Intelligent systems must scaffold inquiry, surface questions, and amplify human reasoning — never short-circuit it.",
-      icon: "🤖",
+      domain: "Educational Technology",
+      role: "Provides the Environment",
+      description: "Designing active, reflective learning spaces with responsive interactive simulations and structured scaffolds.",
+      icon: "💻",
     },
     {
-      id: "phi-3",
-      statement: "Technology should empower meaningful learning.",
-      elaboration:
-        "Every tool I build serves a pedagogical purpose — grounded in research, validated by practice, and designed for impact.",
-      icon: "🔬",
+      domain: "AI & Computational Methods",
+      role: "Provides Analytical Tools",
+      description: "Harnessing NLP, knowledge graphs, and local LLMs for systematic literature mining and evidence synthesis.",
+      icon: "🧠",
     },
   ],
-  stats: {
-    researchProjects: 6,
-    projectsBuilt: 12,
-    publications: 4,
-    articlesWritten: 8,
-    studentsImpacted: "2K+",
-  },
   socials: {
     github: "https://github.com/farrelfz",
-    linkedin: "https://linkedin.com/in/farreldava",
-    googleScholar: "https://scholar.google.com/citations?user=farreldava",
-    instagram: "https://instagram.com/farreldava",
-    researchgate: "https://researchgate.net/profile/FarrelDava",
-    whatsapp: "https://wa.me/6281234567890",
+    instagram: "https://instagram.com/mfarreldavaf",
+    twitter: "https://x.com/mfarreldavaf",
+    whatsapp: "https://wa.me/6281290167472",
   },
+  philosophy: [
+    {
+      id: "ph-1",
+      icon: "⚛️",
+      statement: "Misconceptions are cognitive stepping stones, not deficiencies.",
+      elaboration:
+        "Students arrive with deeply held intuitive models. Effective physics instruction does not merely replace wrong ideas with formulas, but guides students to test, break, and rebuild their conceptual frameworks through inquiry.",
+    },
+    {
+      id: "ph-2",
+      icon: "🧠",
+      statement: "AI in education must preserve epistemic integrity and provenance.",
+      elaboration:
+        "Generative tools should augment human reasoning, not obscure evidence chains. In research and learning, AI systems must be verifiable, transparent, and grounded in domain knowledge.",
+    },
+    {
+      id: "ph-3",
+      icon: "💻",
+      statement: "Simulations must foster active inquiry, not passive observation.",
+      elaboration:
+        "A virtual lab is only as powerful as the thinking it demands. By allowing parameter manipulation, visual feedback, and hypothesis testing, software transforms abstract physics into tangible phenomena.",
+    },
+    {
+      id: "ph-4",
+      icon: "🌐",
+      statement: "Open tools and reproducible science bridge educational disparities.",
+      elaboration:
+        "Lightweight, accessible, open-source educational software democratizes high-quality experimental physics for schools and learners regardless of laboratory infrastructure.",
+    },
+  ],
 };
+
+export const coreExpertise = [
+  {
+    title: "Physics Education & Learning",
+    description: "Pedagogy, conceptual change theory, student misconception diagnostics, and inquiry-based instructional frameworks.",
+    icon: "⚛️",
+  },
+  {
+    title: "Research & Scientific Writing",
+    description: "Systematic literature reviews, qualitative & quantitative methodology, empirical evidence synthesis, and academic writing.",
+    icon: "🔬",
+  },
+  {
+    title: "Educational Technology Development",
+    description: "Web-native learning applications, Canvas 2D/WebGL simulation design, and interactive student engagement workflows.",
+    icon: "⚙️",
+  },
+  {
+    title: "AI & Machine Learning (Applied)",
+    description: "Applied NLP pipelines, transformer classification (IndoBERT), local LLM orchestration via Ollama, and semantic embeddings.",
+    icon: "🧠",
+  },
+  {
+    title: "Data Science & Computational Methods",
+    description: "Corpus analysis, discourse metrics, exploratory data analysis, DuckDB analytics, and statistical modeling with Python.",
+    icon: "📊",
+  },
+  {
+    title: "Research Training Design",
+    description: "Curriculum and multi-session slide decks for youth science programs (KIR/LDP) aligned with national OPSI standards.",
+    icon: "🎓",
+  },
+];
 
 export const researchInterests = [
   {
     id: "ri-1",
-    title: "Physics Education Research",
+    category: "PHYSICS EDUCATION RESEARCH",
+    title: "Conceptual Change & Misconception Mapping",
     description:
-      "Investigating conceptual understanding, misconceptions, and pedagogical frameworks in physics learning at secondary and tertiary levels.",
+      "Investigating how students construct and reconstruct mental models of physical phenomena, identifying persistent misconception variants, and designing targeted cognitive interventions.",
     icon: "⚛️",
     color: "from-blue-500/10 to-blue-500/5",
     borderColor: "border-blue-500/20",
-    tags: ["Conceptual Learning", "Inquiry-Based", "Misconceptions"],
+    topics: ["Conceptual Change", "Physics Misconceptions", "Learning Analytics", "Constructivism"],
   },
   {
     id: "ri-2",
-    title: "AI in Education",
+    category: "AI FOR EDUCATION",
+    title: "LLM-Assisted Research & Semantic Scaffolding",
     description:
-      "Designing intelligent tutoring systems, adaptive learning algorithms, and AI-augmented feedback mechanisms for physics learners.",
+      "Developing conversational and epistemic AI systems that scaffold research workflows, extract academic claims from literature, and guide student scientific inquiry without replacing human thinking.",
     icon: "🧠",
     color: "from-indigo-500/10 to-indigo-500/5",
     borderColor: "border-indigo-500/20",
-    tags: ["ITS", "Adaptive Learning", "NLP", "LLMs"],
+    topics: ["LLM-Based Research Assistance", "Semantic Analysis", "Pedagogical Scaffolding", "Epistemic UI"],
   },
   {
     id: "ri-3",
-    title: "Scientific Visualization",
+    category: "COMPUTATIONAL RESEARCH",
+    title: "Literature Mining & Scientific Knowledge Graphs",
     description:
-      "Creating high-fidelity visual representations of abstract physical phenomena through WebGL, Three.js, and custom rendering pipelines.",
+      "Applying natural language processing to large-scale scientific publications, building structured domain knowledge graphs, and automating evidence synthesis for physics education scholars.",
     icon: "🌌",
     color: "from-cyan-500/10 to-cyan-500/5",
     borderColor: "border-cyan-500/20",
-    tags: ["WebGL", "Three.js", "Data Visualization"],
+    topics: ["Literature Mining", "Knowledge Graphs", "Research Automation", "IMRAD Parsing"],
+  },
+];
+
+export const technicalSkills = {
+  aiMl: {
+    title: "AI & Machine Learning",
+    skills: ["Python", "NLP", "LLM-based Systems", "Semantic Search", "Embeddings", "IndoBERT", "Ollama"],
+  },
+  dataComputing: {
+    title: "Data & Scientific Computing",
+    skills: ["Data Analysis", "Statistical Analysis", "Jupyter", "Google Colab", "NumPy", "Pandas", "DuckDB"],
+  },
+  webBackend: {
+    title: "Web & Backend Development",
+    skills: ["Next.js", "React", "FastAPI", "PostgreSQL", "SQLite", "Supabase", "TypeScript", "Tailwind CSS"],
+  },
+  edTech: {
+    title: "Educational Technology",
+    skills: ["Interactive Learning Simulation", "Canvas 2D", "WebGL", "Curriculum Design", "Assessment Design"],
+  },
+  research: {
+    title: "Research & Academic",
+    skills: ["Research Methodology", "Literature Review", "Scientific Writing", "Evidence Synthesis", "KIR/OPSI Mentorship"],
+  },
+};
+
+export const experiences = [
+  {
+    id: "exp-1",
+    role: "Pelatih KIR (Karya Ilmiah Remaja)",
+    period: "2025 – Sekarang",
+    organization: "SMAN 95 Jakarta · SMAN 84 Jakarta · SMAI Al Azhar 20 Kembangan · SMPN 169 Jakarta",
+    type: "training",
+    description:
+      "Melatih siswa riset di empat sekolah secara paralel untuk program Latihan Dasar Penelitian (LDP). Menyusun materi pelatihan riset, teknik perumusan masalah, teknik bertanya, dan identifikasi variabel selaras dengan standar OPSI (Olimpiade Penelitian Siswa Indonesia). Merancang slide deck multi-sesi yang disesuaikan dengan jenjang dan kebutuhan masing-masing sekolah.",
+    highlights: [
+      "Pelatihan paralel di 4 sekolah menengah pertama & atas di Jakarta",
+      "Kurikulum selaras dengan standar Olimpiade Penelitian Siswa Indonesia (OPSI)",
+      "Penyusunan modul dan slide deck multi-sesi untuk pembina, mentor, dan siswa",
+    ],
+    tags: ["Pelatihan Riset", "Metodologi Penelitian", "LDP", "OPSI", "KIR"],
+    icon: "🔬",
   },
   {
-    id: "ri-4",
-    title: "Interactive Simulation",
+    id: "exp-2",
+    role: "Praktik Kerja Mengajar (PKM) Fisika",
+    period: "2025 – Sekarang",
+    organization: "SMAN 78 Jakarta",
+    type: "teaching",
     description:
-      "Engineering real-time physics simulations that translate mathematical models into explorable, controllable, and observable environments.",
-    icon: "🔧",
-    color: "from-sky-500/10 to-sky-500/5",
-    borderColor: "border-sky-500/20",
-    tags: ["Physics Engines", "Real-time", "WebAssembly"],
+      "Mengajar dan menyusun perangkat pembelajaran fisika untuk materi Hukum Newton dan Dinamika Gerak pada siswa kelas XI. Mengintegrasikan pembelajaran dengan konteks STEM dunia nyata, menyusun instrumen asesmen konseptual, serta menyusun Panduan Tugas Proyek Fisika berbasis penyelidikan autentik.",
+    highlights: [
+      "Pengajaran materi Hukum Newton & Dinamika Gerak Kelas XI",
+      "Integrasi konteks STEM dunia nyata dalam eksperimen",
+      "Penyusunan instrumen asesmen fisika & Panduan Tugas Proyek",
+    ],
+    tags: ["Pendidikan Fisika", "Hukum Newton", "Dinamika Gerak", "STEM", "Asesmen"],
+    icon: "⚛️",
   },
   {
-    id: "ri-5",
-    title: "Learning Analytics",
+    id: "exp-3",
+    role: "Kepala Divisi Humas, Informasi & Komunikasi (HIK)",
+    period: "2024 – 2025",
+    organization: "Kelompok Peneliti Muda, Universitas Negeri Jakarta (KPM UNJ)",
+    type: "organization",
     description:
-      "Applying data science to understand student learning trajectories, identify gaps, and generate actionable pedagogical insights.",
-    icon: "📊",
-    color: "from-teal-500/10 to-teal-500/5",
-    borderColor: "border-teal-500/20",
-    tags: ["Learning Traces", "Predictive Models", "Dashboards"],
+      "Memimpin strategi komunikasi, publikasi ilmiah, dan diseminasi informasi kegiatan penelitian organisasi. Mengelola konten digital, dokumentasi program penelitian ilmiah mahasiswa, serta memperkuat keterlibatan dan visibilitas kegiatan riset organisasi kepada publik kampus dan sivitas akademika.",
+    highlights: [
+      "Perumusan strategi publikasi dan diseminasi hasil riset mahasiswa",
+      "Pengelolaan kanal komunikasi dan dokumentasi program riset ilmiah",
+      "Peningkatan visibilitas kegiatan penelitian di lingkungan universitas",
+    ],
+    tags: ["Komunikasi Ilmiah", "Diseminasi Riset", "Manajemen Publikasi", "Kepemimpinan"],
+    icon: "📢",
+  },
+];
+
+export const achievements = [
+  {
+    id: "ach-1",
+    level: "National",
+    title: "Juara 2 — Lomba Essay Ilmiah Nasional",
+    organizer: "Politeknik Negeri Malang",
+    year: "2024",
+    icon: "🥈",
   },
   {
-    id: "ri-6",
-    title: "Human-Centered Learning Design",
-    description:
-      "Applying HCI principles, cognitive load theory, and UX research to design educational interfaces that feel effortless and effective.",
-    icon: "🎯",
-    color: "from-slate-500/10 to-slate-500/5",
-    borderColor: "border-slate-500/20",
-    tags: ["HCI", "Cognitive Load", "UX Research"],
+    id: "ach-2",
+    level: "National",
+    title: "Peserta Terpilih — Program WiraWiri UNJ",
+    organizer: "WMK Kemendikbudristek",
+    year: "2024",
+    icon: "🌟",
+  },
+  {
+    id: "ach-3",
+    level: "National",
+    title: "Juara 3 — LKTIN UNIMED Bidang Pendidikan",
+    organizer: "Universitas Negeri Medan",
+    year: "2023",
+    icon: "🥉",
+  },
+  {
+    id: "ach-4",
+    level: "Campus",
+    title: "Pendanaan Program Mahasiswa Wirausaha (PMW) — FisikaSeru",
+    organizer: "Universitas Negeri Jakarta",
+    year: "2024",
+    icon: "🚀",
+  },
+  {
+    id: "ach-5",
+    level: "Campus",
+    title: "Pendanaan Program Mahasiswa Wirausaha (PMW) — Pick Your Teacher",
+    organizer: "Universitas Negeri Jakarta",
+    year: "2023",
+    icon: "💡",
   },
 ];
 
 export const projects = [
   {
+    id: "conceptra",
+    title: "Conceptra",
+    subtitle: "NLP Knowledge Graph for Physics Misconceptions",
+    domain: "Physics Education Research + NLP + Knowledge Graph + Literature Mining",
+    summary:
+      "The Indonesian Physics Misconception Observatory (1996–2026): A systematic literature mining system and knowledge graph mapping 1,002 physics misconception variants across 17,755 verified research articles with strict invariant validation.",
+    description:
+      "Conceptra systematically maps physics misconceptions documented across decades of Indonesian physics education research. To ensure research-grade data integrity, the pipeline implements strict invariant checks against fabricated metadata and verifies articles against OpenAlex APIs. The platform equips researchers and educators with an interactive analytics dashboard, topic evolution trees, and misconception-to-concept graph representations.",
+    problem:
+      "Physics misconceptions in Indonesia have historically remained scattered across thousands of disconnected theses and journal papers without a centralized, queryable knowledge base, preventing evidence-based curriculum reform and targeted diagnostic intervention.",
+    approach:
+      "Engineered an automated literature collection and forensic validation pipeline utilizing OpenAlex API integration, NLP extraction, and graph modeling. Built with hard invariants preventing invalid DOIs and fabricated records.",
+    techStack: ["FastAPI", "SQLite", "Next.js", "Python", "OpenAlex API", "NLP"],
+    category: "RESEARCH & KNOWLEDGE GRAPH",
+    tags: ["Knowledge Graph", "Physics Education", "NLP", "Literature Mining"],
+    status: "Active Development",
+    featured: true,
+    year: 2024,
+    metrics: [
+      "17,755 verified research articles indexed",
+      "1,002 physics misconception variants mapped",
+      "1996–2026 comprehensive literature span",
+    ],
+    githubUrl: "https://github.com/farrelfz/conceptra",
+    color: "from-blue-600 to-cyan-700",
+  },
+  {
+    id: "physion",
+    title: "PHYSION / PERC Engine",
+    subtitle: "AI-Assisted Physics Education Research System",
+    domain: "AI + Physics Education Research + Scientific Literature Intelligence",
+    summary:
+      "Design of an AI-assisted research intelligence system for Physics Education Research (PER), featuring IMRAD structure parsing, research claim extraction, calibrated trust scores, and five-layer epistemic retrieval.",
+    description:
+      "PHYSION (Physics Education Research Corpus Engine) is designed to assist educational researchers in navigating complex literature. Its multi-layer architecture parses scientific papers along IMRAD conventions, evaluates methodology trust scores, and synthesizes qualitative/quantitative claims using local, privacy-preserving language models.",
+    problem:
+      "Educational scholars spend excessive hours manually vetting paper methodologies, filtering low-rigor publications, and cross-referencing empirical claims across disparate repositories.",
+    approach:
+      "Designed a five-layer retrieval architecture leveraging local open-weight language models via Ollama: qwen2.5:3b for structured claim extraction, qwen3:8b for deep theoretical synthesis, and nomic-embed-text for semantic embeddings, served via FastAPI with an epistemic React UI.",
+    techStack: ["Python", "FastAPI", "React", "Ollama", "Qwen 2.5", "Qwen 3", "Nomic Embeddings"],
+    category: "AI FOR EDUCATION",
+    tags: ["AI for Education", "Literature Intelligence", "IMRAD Parsing", "Trust Scoring"],
+    status: "Designed / In Development",
+    note: "Architecture, corpus quality protocol, and NLP pipeline have been designed comprehensively as a foundation for further development.",
+    featured: true,
+    year: 2025,
+    metrics: [
+      "Five-layer epistemic retrieval architecture",
+      "Dual local LLM pipeline (qwen2.5:3b + qwen3:8b)",
+      "Standardized IMRAD claim extraction parser",
+    ],
+    githubUrl: "https://github.com/farrelfz/Physion",
+    color: "from-indigo-600 to-violet-700",
+  },
+  {
+    id: "kok-bisa-analytics",
+    title: "Kok Bisa? Physics Discourse Analytics",
+    subtitle: "Computational Science Communication & Physics Discourse Analytics",
+    domain: "NLP + Deep Learning + Science Communication + Physics Education",
+    summary:
+      "Computational discourse analysis of 202,429 Indonesian YouTube comments across 35 science education videos, classifying 8 discourse acts using fine-tuned IndoBERT with 97.40% Macro F1 and 97.73% Accuracy.",
+    description:
+      "This computational study explores how the Indonesian public engages with science education videos outside formal classrooms. Using a fine-tuned IndoBERT deep learning model, the system classifies 202,429 viewer comments into 8 communicative discourse acts to uncover patterns of scientific curiosity, misconceptions, and informal reasoning.",
+    problem:
+      "Understanding public science literacy and identifying informal physics misconceptions at scale is practically impossible with manual qualitative coding when handling hundreds of thousands of conversational comments.",
+    approach:
+      "Harvested and cleaned 202,429 YouTube comments from prominent Indonesian science education channels, optimized high-speed querying using DuckDB, fine-tuned an IndoBERT transformer classifier across 8 discourse categories, and exposed insights via a FastAPI backend and React 19 / Recharts dashboard.",
+    techStack: ["Python", "IndoBERT", "FastAPI", "DuckDB", "React 19", "Vite", "Recharts"],
+    category: "COMPUTATIONAL RESEARCH",
+    tags: ["NLP", "IndoBERT", "Science Communication", "Discourse Analytics"],
+    status: "Completed",
+    featured: true,
+    year: 2024,
+    metrics: [
+      "202,429 YouTube comments analyzed",
+      "35 science education videos investigated",
+      "8 distinct discourse acts categorized",
+      "97.40% Macro F1 · 97.73% Accuracy achieved",
+    ],
+    githubUrl: "https://github.com/farrelfz/kok-bisa-physics-discourse-analytics",
+    color: "from-amber-600 to-rose-700",
+  },
+  {
     id: "fisikaseru",
-    title: "FisikaSeru",
-    subtitle: "Physics Learning Platform",
+    title: "FisikaSeru 3.0",
+    subtitle: "B2C Physics Education Platform",
+    domain: "Interactive Physics Learning + Constructivism + Conceptual Change",
     summary:
-      "A comprehensive physics learning ecosystem combining interactive simulations, AI tutoring, and inquiry-based pedagogy for Indonesian high school students.",
+      "An interactive physics learning platform grounded in Constructivism and Conceptual Change Theory, featuring a 7-stage learning flow, non-skippable reflection, and real-time simulations.",
     description:
-      "FisikaSeru reimagines physics education for Indonesian learners through a web-native platform integrating 30+ interactive simulations, an AI-powered tutor, and a structured inquiry framework aligned with the Kurikulum Merdeka. The platform bridges the gap between abstract physics equations and intuitive understanding.",
+      "FisikaSeru 3.0 reimagines high school physics learning as an active sense-making journey. Built around Conceptual Change Theory, students confront cognitive discrepancies through interactive simulations, engage in structured hypothesis-testing, and complete mandatory reflection steps before formula formalization.",
     problem:
-      "Indonesian high school students consistently rank among the lowest globally in physics conceptual understanding, largely due to rote memorization approaches, inaccessible labs, and disconnected curriculum design.",
-    researchBasis:
-      "Grounded in Ausubel's Meaningful Learning theory, Vygotsky's ZPD, and Inquiry-Based Learning (IBL) frameworks. Validated through pre-post quasi-experimental studies with 200+ participants.",
-    techStack: ["React", "TypeScript", "Three.js", "Supabase", "OpenAI API", "Tailwind CSS"],
-    category: "EdTech Platform",
-    tags: ["Simulation", "AI", "IBL", "Web"],
-    status: "Active",
+      "High school physics instruction in Indonesia frequently reduces physical phenomena to formula memorization, fostering fragile understanding and persistent misconceptions that fail during problem transfer.",
+    approach:
+      "Developed a web-native educational architecture featuring a 7-stage constructivist inquiry sequence, Canvas 2D / WebGL rendering with a degradation hierarchy for smooth operation across lower-spec student devices, and state persistence with Zustand & Supabase.",
+    techStack: ["Next.js 15", "Supabase", "Zustand", "TanStack Query", "Canvas 2D", "WebGL", "Tailwind CSS"],
+    category: "EDUCATIONAL TECHNOLOGY",
+    tags: ["Constructivism", "Conceptual Change", "Simulation", "EdTech Platform"],
+    status: "Active Development",
     featured: true,
     year: 2024,
-    impact: [
-      "2,000+ registered students",
-      "35% improvement in conceptual test scores",
-      "40+ interactive simulations deployed",
-      "Used across 15 schools in Jakarta",
+    metrics: [
+      "7-stage constructivist learning flow",
+      "Non-skippable student reflection mechanism",
+      "WebGL degradation hierarchy for multi-device support",
+      "Recipient of PMW UNJ Entrepreneurship Funding 2024",
     ],
-    demoUrl: "https://fisikaseru.com",
     githubUrl: "https://github.com/farrelfz/fisikaseru",
-    color: "from-blue-600 to-indigo-700",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800",
+    color: "from-emerald-600 to-teal-700",
   },
   {
-    id: "aih-fisika",
-    title: "AIH Fisika",
-    subtitle: "AI-Powered Physics Homework Assistant",
+    id: "risenologi-jams",
+    title: "Risenologi JAMS",
+    subtitle: "Editorial Workflow Communication System",
+    domain: "Research Infrastructure + Journal Management + Workflow Automation",
     summary:
-      "An intelligent homework assistance system that guides students through physics problem-solving using Socratic dialogue, step-by-step scaffolding, and conceptual feedback.",
+      "A research infrastructure and journal workflow intelligence platform featuring human-in-control communication drafts, Sinta/Arjuna readiness tracking, reviewer registry, and audit trails.",
     description:
-      "AIH Fisika (AI Helper Fisika) is a conversational AI system specifically fine-tuned for Indonesian physics curriculum. Unlike generic AI tools, it refuses to give direct answers — instead, it scaffolds reasoning through targeted questions, identifies misconceptions, and guides students to construct understanding independently.",
+      "Risenologi JAMS (Journal Action Management System) streamlines academic journal editorial operations. Grounded in a 'human-in-control' principle, system-generated notification drafts for authors and reviewers require explicit editorial sign-off before dispatch, ensuring adherence to Indonesian data privacy and editorial governance.",
     problem:
-      "Students use AI tools like ChatGPT to get answers, bypassing actual learning. This creates an illusion of understanding while deepening knowledge gaps.",
-    researchBasis:
-      "Built on Socratic method principles, cognitive tutoring theory (Anderson et al.), and self-regulated learning frameworks. Uses chain-of-thought prompting engineered for physics pedagogy.",
-    techStack: ["Next.js", "TypeScript", "OpenAI API", "LangChain", "PostgreSQL", "Vercel AI SDK"],
-    category: "AI Education",
-    tags: ["AI", "LLM", "Scaffolding", "Physics"],
-    status: "Beta",
-    featured: true,
-    year: 2024,
-    impact: [
-      "500+ weekly active users",
-      "92% user satisfaction rating",
-      "Covers full SMA physics curriculum",
-      "Average session depth: 8 exchanges",
-    ],
-    demoUrl: "https://aih.fisikaseru.com",
-    githubUrl: "https://github.com/farrelfz/aih-fisika",
-    color: "from-indigo-600 to-blue-700",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    id: "risetify",
-    title: "Risetify",
-    subtitle: "Research Management & Automation Platform",
-    summary:
-      "A full-stack research infrastructure platform for automating literature collection, metadata ingestion, citation analysis, and research pipeline management for physics education scholars.",
-    description:
-      "Risetify is a research-grade automation platform built to solve the fragmentation of academic research workflows. It integrates with Semantic Scholar, CrossRef, and OpenAlex APIs to build living knowledge bases, automate systematic literature reviews, and generate scientometric dashboards.",
-    problem:
-      "Physics education researchers spend 60%+ of their time on administrative research tasks — manually collecting papers, managing citations, and organizing literature — leaving insufficient time for actual scientific thinking.",
-    researchBasis:
-      "Inspired by systematic review methodologies (PRISMA), bibliometric analysis frameworks, and knowledge graph theory. Designed for the Physics Education Research Corpus (PERC) Engine project.",
-    techStack: ["Python", "FastAPI", "PostgreSQL", "Neo4j", "React", "Docker", "Celery"],
-    category: "Research Automation",
-    tags: ["Research", "Automation", "NLP", "Knowledge Graph"],
+      "University student-led and department journals struggle with fragmented submission tracking, unstandardized reviewer timelines, and tedious manual communication across editorial teams.",
+    approach:
+      "Architected an action-trigger editorial workflow featuring Sinta/Arjuna accreditation readiness evaluation, a structured reviewer registry, automated draft templating with 2-way Google Sheets synchronization, and Supabase / Next.js architecture.",
+    techStack: ["Next.js", "Supabase", "FastAPI", "PostgreSQL", "Google Sheets API", "Vercel"],
+    category: "RESEARCH INFRASTRUCTURE",
+    tags: ["Workflow Automation", "Journal Management", "Editorial Intelligence", "Human-in-Control"],
     status: "In Development",
     featured: true,
-    year: 2025,
-    impact: [
-      "Automates 80% of literature collection",
-      "Processes 10,000+ papers per run",
-      "Integrated citation network visualization",
-      "Used by 3 research groups",
-    ],
-    demoUrl: "",
-    githubUrl: "https://github.com/farrelfz/risetify",
-    color: "from-cyan-600 to-sky-700",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    id: "sipanen",
-    title: "SIPANEN",
-    subtitle: "Physics Assessment & Analytics Engine",
-    summary:
-      "An adaptive assessment engine that generates, administers, and analyzes physics tests using Item Response Theory and machine learning to produce actionable learning diagnostics.",
-    description:
-      "SIPANEN (Sistem Penilaian dan Analitik Pembelajaran) is a psychometrically-grounded assessment platform for physics education. It uses IRT-based item calibration, adaptive testing algorithms, and ML-powered misconception detection to produce granular diagnostic reports for both students and teachers.",
-    problem:
-      "Current physics assessments in Indonesia measure recall, not understanding. Teachers lack tools to identify specific misconceptions and cannot differentiate instruction effectively at scale.",
-    researchBasis:
-      "Built on Item Response Theory (Rasch model), diagnostic classification models, and cognitive diagnostic assessment (CDA) frameworks. Validated with item bank of 500+ calibrated physics items.",
-    techStack: ["Python", "R", "React", "TypeScript", "PostgreSQL", "FastAPI"],
-    category: "Assessment Technology",
-    tags: ["Assessment", "IRT", "Analytics", "Adaptive"],
-    status: "Research Phase",
-    featured: true,
-    year: 2025,
-    impact: [
-      "500-item calibrated question bank",
-      "Covers all SMA physics topics",
-      "IRT-based adaptive testing",
-      "Misconception clustering via ML",
-    ],
-    demoUrl: "",
-    githubUrl: "https://github.com/farrelfz/sipanen",
-    color: "from-sky-600 to-blue-700",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    id: "milikanlab",
-    title: "MilikanLab",
-    subtitle: "Virtual Millikan Oil Drop Experiment",
-    summary:
-      "A high-fidelity virtual recreation of Millikan's oil drop experiment with real noise modeling, measurement uncertainty, and authentic laboratory protocol to teach charge quantization.",
-    description:
-      "MilikanLab recreates the historic 1909 experiment in a browser-based virtual environment. Students operate authentic controls (voltage, plate separation, droplet selection), measure terminal velocities, and derive the elementary charge — with realistic measurement noise that teaches uncertainty analysis alongside the physics.",
-    problem:
-      "The Millikan experiment is foundational for teaching charge quantization but is expensive, hazardous with real oil, and mechanically complex. Most students never perform it.",
-    researchBasis:
-      "Physics-accurate simulation using Stokes' law, viscous drag modeling, and statistical noise injection validated against NIST elementary charge data. Pedagogically designed using authentic scientific practice frameworks.",
-    techStack: ["React", "TypeScript", "Canvas API", "Framer Motion", "MathJax"],
-    category: "Virtual Laboratory",
-    tags: ["Simulation", "Virtual Lab", "Classical Physics"],
-    status: "Complete",
-    featured: true,
-    year: 2023,
-    impact: [
-      "Used in 8 universities",
-      "Physics-accurate noise modeling",
-      "Full measurement uncertainty workflow",
-      "1,200+ experiment runs logged",
-    ],
-    demoUrl: "https://milikanlab.fisikaseru.com",
-    githubUrl: "https://github.com/farrelfz/milikanlab",
-    color: "from-teal-600 to-cyan-700",
-    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    id: "pyrolab",
-    title: "PyroLab",
-    subtitle: "Thermodynamics & Heat Transfer Simulator",
-    summary:
-      "An interactive thermodynamics simulation suite covering heat transfer mechanisms, gas laws, carnot cycles, and entropy — with real-time parameter control and data export.",
-    description:
-      "PyroLab provides a unified simulation environment for thermodynamics education, featuring six interconnected modules: conduction/convection/radiation visualizers, ideal gas behavior, PV diagram explorer, Carnot cycle animator, and entropy production tracker. All simulations export data for further analysis.",
-    problem:
-      "Thermodynamics is persistently the lowest-performing topic in Indonesian physics education, with abstract concepts like entropy and Carnot efficiency rarely understood beyond formula memorization.",
-    researchBasis:
-      "Built on first-principles thermodynamic equations. Pedagogically structured around Energy-Interaction Models (EIM) and supported by research on conceptual change in heat and temperature.",
-    techStack: ["React", "TypeScript", "D3.js", "Canvas API", "Recharts"],
-    category: "Virtual Laboratory",
-    tags: ["Simulation", "Thermodynamics", "Data Visualization"],
-    status: "Complete",
-    featured: true,
-    year: 2023,
-    impact: [
-      "6 simulation modules",
-      "Real-time data export (CSV/JSON)",
-      "Used in 5 universities",
-      "Aligned with SNBT physics syllabus",
-    ],
-    demoUrl: "https://pyrolab.fisikaseru.com",
-    githubUrl: "https://github.com/farrelfz/pyrolab",
-    color: "from-slate-600 to-slate-800",
-    image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
-  },
-];
-
-export const publications = [
-  {
-    id: "pub-1",
-    title:
-      "Effectiveness of Inquiry-Based Virtual Laboratory on Students' Conceptual Understanding of Newton's Laws",
-    authors: "Fauzan, M.F.D., Pratama, D., & Sari, R.",
-    journal: "Jurnal Pendidikan Fisika Indonesia",
     year: 2024,
-    doi: "10.15294/jpfi.v20i1.xxxxx",
-    type: "Journal Article",
-    status: "Published",
-    abstract:
-      "This quasi-experimental study investigates the effectiveness of an inquiry-based virtual laboratory intervention on conceptual understanding of Newton's Laws among 11th-grade students (N=156). Results indicate statistically significant improvements (d=0.78) in post-test scores compared to conventional instruction.",
-    tags: ["IBL", "Virtual Lab", "Newton's Laws", "Quasi-experimental"],
-  },
-  {
-    id: "pub-2",
-    title:
-      "Designing AI-Scaffolded Physics Problem Solving: A Socratic Dialogue Framework",
-    authors: "Fauzan, M.F.D. & Rahmat, A.",
-    journal: "Indonesian Journal of Science Education",
-    year: 2024,
-    doi: "10.15294/ijse.v13i2.xxxxx",
-    type: "Journal Article",
-    status: "Published",
-    abstract:
-      "We propose and evaluate a Socratic dialogue framework for AI-scaffolded physics problem solving, implemented as a conversational AI tutor. A mixed-methods study (N=89) demonstrates improved self-regulation and reduced answer-seeking behavior.",
-    tags: ["AI Tutoring", "Socratic Method", "LLM", "Self-regulation"],
-  },
-  {
-    id: "pub-3",
-    title:
-      "Learning Analytics Dashboard for Identifying Physics Misconceptions: A Teacher-Centered Design Study",
-    authors: "Fauzan, M.F.D., Wahyuni, S., & Kusuma, A.",
-    journal: "Proceedings of ICPE 2023",
-    year: 2023,
-    doi: "10.1088/icpe.2023.xxxxx",
-    type: "Conference Paper",
-    status: "Published",
-    abstract:
-      "This design study presents a teacher-facing analytics dashboard for real-time misconception identification in physics classrooms. We report on three design iterations with 12 physics teachers across Jakarta.",
-    tags: ["Learning Analytics", "Misconceptions", "Dashboard", "Design Study"],
-  },
-  {
-    id: "pub-4",
-    title:
-      "Item Response Theory Calibration of a Physics Conceptual Inventory for Indonesian Secondary Education",
-    authors: "Fauzan, M.F.D. & Supriyadi, B.",
-    journal: "Jurnal Penelitian Pendidikan IPA",
-    year: 2023,
-    doi: "10.29303/jppipa.v9i3.xxxxx",
-    type: "Journal Article",
-    status: "Published",
-    abstract:
-      "We report the IRT calibration of a 60-item physics conceptual inventory for Indonesian SMA students using the Rasch model (N=412). Item fit statistics, discrimination parameters, and differential item functioning analyses are presented.",
-    tags: ["IRT", "Rasch Model", "Assessment", "Psychometrics"],
+    metrics: [
+      "Human-in-control draft confirmation protocol",
+      "Sinta & Arjuna accreditation readiness metrics",
+      "Bi-directional Google Sheets synchronization",
+    ],
+    githubUrl: "https://github.com/farrelfz/Risenologi-JAMS",
+    color: "from-sky-600 to-blue-800",
   },
 ];
 
-export const timeline = [
+export const secondaryProjects = [
   {
-    id: "tl-1",
-    year: "2025",
-    title: "Physics Education Research Corpus Engine",
-    description:
-      "Initiated Risetify — an automated research infrastructure for large-scale physics education knowledge synthesis.",
-    type: "research",
-    highlight: true,
+    title: "EduText",
+    description: "Modular tools and scripts for educational text processing, formatting, and reading comprehension analysis.",
+    githubUrl: "https://github.com/farrelfz/edutext",
+    tags: ["Python", "TypeScript", "EdTech"],
   },
   {
-    id: "tl-2",
-    year: "2024",
-    title: "AIH Fisika — AI Homework Assistant",
-    description:
-      "Launched AI-powered Socratic tutoring system. Paper accepted at Indonesian Journal of Science Education.",
-    type: "project",
-    highlight: true,
+    title: "Fasilitator Portfolio",
+    description: "Facilitation portfolio showcasing student research workshops (KIR/OPSI), mentoring programs, and academic training decks.",
+    githubUrl: "https://github.com/farrelfz/fasilitator",
+    tags: ["Workshops", "Mentorship", "Training"],
   },
   {
-    id: "tl-3",
-    year: "2024",
-    title: "FisikaSeru Platform Launch",
-    description:
-      "Deployed full learning ecosystem. Reached 2,000 registered students across 15 schools in Jakarta.",
-    type: "project",
-    highlight: true,
+    title: "Analytics Employee",
+    description: "Exploratory data analysis and predictive HR modeling exploring retention patterns and performance factors.",
+    githubUrl: "https://github.com/farrelfz/analytics-employee",
+    tags: ["Data Science", "Python", "Predictive Modeling"],
   },
   {
-    id: "tl-4",
-    year: "2024",
-    title: "Journal Publication — JPFI",
-    description:
-      "Published first-author research on IBL virtual laboratory effectiveness. Quasi-experimental study with N=156.",
-    type: "publication",
-    highlight: false,
+    title: "Insurance App",
+    description: "Interactive machine learning prediction application developed during the PPKD Data Science 2026 curriculum.",
+    githubUrl: "https://github.com/farrelfz/insurance-app",
+    tags: ["Streamlit", "Python", "Machine Learning"],
   },
   {
-    id: "tl-5",
-    year: "2023",
-    title: "ICPE 2023 — Conference Presentation",
-    description:
-      "Presented learning analytics dashboard research. Received recognition for design methodology.",
-    type: "achievement",
-    highlight: false,
-  },
-  {
-    id: "tl-6",
-    year: "2023",
-    title: "MilikanLab & PyroLab Complete",
-    description:
-      "Delivered two flagship virtual laboratory simulations. Adopted by 5+ universities.",
-    type: "project",
-    highlight: false,
-  },
-  {
-    id: "tl-7",
-    year: "2022",
-    title: "Enrolled — Physics Education, UNJ",
-    description:
-      "Began undergraduate studies at Universitas Negeri Jakarta, Physics Education department.",
-    type: "education",
-    highlight: true,
-  },
-  {
-    id: "tl-8",
-    year: "2022",
-    title: "First Open Source Simulation",
-    description:
-      "Released first public physics simulation. Gained traction in Indonesian physics education community.",
-    type: "project",
-    highlight: false,
+    title: "Belajar Streamlit",
+    description: "Prototyping repository and component testing for data science web dashboards and interactive widgets.",
+    githubUrl: "https://github.com/farrelfz/belajarstreamlit",
+    tags: ["Streamlit", "Python", "Dashboard"],
   },
 ];
 
-export const teachingFramework = [
+export const writings = [
   {
-    id: "tf-1",
-    name: "Inquiry-Based Learning",
-    abbr: "IBL",
-    description:
-      "Students formulate questions, investigate phenomena, and construct knowledge through guided experimentation — moving from observation to theory.",
-    color: "from-blue-500 to-indigo-600",
+    id: "wr-1",
+    title: "Mengapa Pendidikan Fisika Membutuhkan Rekonseptualisasi, Bukan Sekadar Alat Baru",
+    category: "PHYSICS EDUCATION",
+    excerpt:
+      "Tantangan utama dalam pembelajaran fisika bukan sekadar ketiadaan alat interaktif, melainkan bagaimana pedagogi menghubungkan model konseptual siswa dengan representasi fenomena fisik secara bermakna.",
+    readingTime: "6 min",
+    date: "2025",
+    slug: "rekonseptualisasi-pendidikan-fisika",
   },
   {
-    id: "tf-2",
-    name: "Bloom's Taxonomy",
-    abbr: "BT",
-    description:
-      "Instructional design scaffolded across cognitive levels — from foundational Remember/Understand to higher-order Analyze/Evaluate/Create.",
-    color: "from-violet-500 to-purple-600",
+    id: "wr-2",
+    title: "Prinsip Epistemik dalam Merancang AI untuk Riset Pendidikan",
+    category: "AI FOR EDUCATION",
+    excerpt:
+      "Menjelaskan mengapa AI dalam ranah riset ilmiah harus dirancang untuk memperjelas rantai penalaran dan integritas bukti, bukan sekadar meringkas teks tanpa akuntabilitas metodologis.",
+    readingTime: "8 min",
+    date: "2025",
+    slug: "prinsip-epistemik-ai-riset",
   },
   {
-    id: "tf-3",
-    name: "Scaffolded Instruction",
-    abbr: "SI",
-    description:
-      "Temporary support structures (hints, prompts, worked examples) that bridge the Zone of Proximal Development and fade as competence grows.",
-    color: "from-emerald-500 to-teal-600",
+    id: "wr-3",
+    title: "Membangun Observatory Miskonsepsi: Pembelajaran dari 17.000 Artikel Penelitian",
+    category: "RESEARCH METHODS",
+    excerpt:
+      "Catatan teknis dan metodologis di balik pembangunan Conceptra — bagaimana data forensik dan invariant checks mencegah halusinasi data dalam sintesis literatur ilmiah.",
+    readingTime: "10 min",
+    date: "2024",
+    slug: "observatory-miskonsepsi-conceptra",
   },
   {
-    id: "tf-4",
-    name: "Meaningful Learning",
-    abbr: "ML",
-    description:
-      "Ausubel's framework: new knowledge must connect to existing cognitive structures. Concept maps, analogies, and prior knowledge activation are central.",
-    color: "from-orange-500 to-amber-600",
+    id: "wr-4",
+    title: "Analisis Wacana Publik Sains: Apa yang Kita Pelajari dari 200.000 Komentar Edukasi?",
+    category: "SCIENCE COMMUNICATION",
+    excerpt:
+      "Refleksi dari analisis korpus YouTube sains Indonesia menggunakan IndoBERT — memetakan pola keingintahuan, skeptisisme, dan penalaran informal masyarakat awam terhadap sains.",
+    readingTime: "7 min",
+    date: "2024",
+    slug: "analisis-wacana-publik-sains",
   },
 ];
 
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/#about" },
   { label: "Research", href: "/research" },
-  { label: "Publications", href: "/publications" },
-  { label: "Writing", href: "/writing" },
+  { label: "Projects", href: "/projects" },
   { label: "Experience", href: "/experience" },
+  { label: "Writing", href: "/writing" },
   { label: "Contact", href: "/contact" },
 ];
 
-// ============================================================
-// CONTENT TAXONOMY DISTINCTION:
-//
-// RESEARCH   = active scientific investigations, ongoing studies,
-//              methodology, research clusters, living projects
-// PUBLICATIONS = peer-reviewed, DOI-indexed, formally published
-//                academic papers (journal articles, conference papers)
-// WRITING    = essays, perspectives, science communication, build
-//              logs, opinion pieces — Farrel as public intellectual
-// ============================================================
-
-export const writingArticles = [
+export const teachingFramework = [
   {
-    id: "wr-1",
-    title: "Why Physics Education Needs a Complete Redesign — Not Just Better Tools",
-    excerpt:
-      "We keep grafting technology onto broken pedagogy and calling it innovation. The real crisis is upstream: we teach physics as a collection of formulas rather than a way of making sense of reality.",
-    category: "Education Policy",
-    tags: ["Pedagogy", "Reform", "EdTech"],
-    readingTime: "8 min",
-    date: "2025-03",
-    featured: true,
-    url: "/writing/physics-education-redesign",
+    id: "tf-1",
+    abbr: "POE",
+    name: "Predict - Observe - Explain",
+    description:
+      "Encouraging active hypothesis formation before running physics simulations, prompting students to confront discrepancies between intuition and physical observation.",
+    color: "from-blue-600 to-indigo-700",
   },
   {
-    id: "wr-2",
-    title: "The Problem with AI Tutors That Just Give Answers",
-    excerpt:
-      "Large language models are extraordinarily good at telling students the answer. That's precisely what makes them dangerous as learning tools if deployed without pedagogical intent.",
-    category: "AI & Learning",
-    tags: ["AI", "LLMs", "Tutoring", "Socratic Method"],
-    readingTime: "6 min",
-    date: "2025-01",
-    featured: true,
-    url: "/writing/ai-tutors-answers-problem",
+    id: "tf-2",
+    abbr: "CCT",
+    name: "Conceptual Change Theory",
+    description:
+      "Diagnosing deeply rooted preconceptions through diagnostic items to create cognitive conflict and support permanent mental model restructuring.",
+    color: "from-cyan-600 to-teal-700",
   },
   {
-    id: "wr-3",
-    title: "Simulation Is Not Reality — And That's the Point",
-    excerpt:
-      "When students use a virtual Millikan experiment, they're not doing the experiment. They're doing something arguably more valuable: reasoning through an idealized model.",
-    category: "Simulation & Learning",
-    tags: ["Simulation", "Virtual Lab", "Epistemology"],
-    readingTime: "5 min",
-    date: "2024-11",
-    featured: false,
-    url: "/writing/simulation-not-reality",
+    id: "tf-3",
+    abbr: "IBL",
+    name: "Guided Inquiry Learning",
+    description:
+      "Structuring student research mentoring (KIR/OPSI) with progressive scaffolds, fostering independent variable isolation, data collection, and scientific argumentation.",
+    color: "from-violet-600 to-purple-700",
   },
   {
-    id: "wr-4",
-    title: "Inquiry-Based Learning Isn't Just 'Letting Students Explore'",
-    excerpt:
-      "The most common misimplementation of IBL is treating it as unstructured discovery. Real IBL is architectural — every question, constraint, and pause is designed.",
-    category: "Pedagogy",
-    tags: ["IBL", "Inquiry", "Curriculum Design"],
-    readingTime: "7 min",
-    date: "2024-09",
-    featured: false,
-    url: "/writing/ibl-not-unstructured",
-  },
-  {
-    id: "wr-5",
-    title: "The Quiet Crisis in Indonesian Physics Education Data",
-    excerpt:
-      "We make sweeping policy decisions about physics curriculum reform with almost no longitudinal data on what students actually understand. Here's what's missing.",
-    category: "Research & Policy",
-    tags: ["Indonesia", "Learning Analytics", "Policy"],
-    readingTime: "9 min",
-    date: "2024-07",
-    featured: true,
-    url: "/writing/indonesia-physics-data-crisis",
-  },
-  {
-    id: "wr-6",
-    title: "Building Risetify: When a Researcher Gets Tired of Manual Literature Reviews",
-    excerpt:
-      "After spending 40 hours on a single systematic review, I decided to automate the pipeline. This is the story of Risetify — the frustrations and what I learned.",
-    category: "Behind the Build",
-    tags: ["Risetify", "Research Automation", "Build Log"],
-    readingTime: "10 min",
-    date: "2024-05",
-    featured: false,
-    url: "/writing/building-risetify",
-  },
-  {
-    id: "wr-7",
-    title: "What Entropy Actually Is (And Why Teachers Get It Wrong)",
-    excerpt:
-      "Entropy is not disorder. It's not chaos. It's a precise measure of microscopic states. Let's fix one of the most persistent misconceptions in physics education.",
-    category: "Science Communication",
-    tags: ["Thermodynamics", "Entropy", "Science Communication"],
-    readingTime: "6 min",
-    date: "2024-03",
-    featured: false,
-    url: "/writing/what-entropy-actually-is",
-  },
-  {
-    id: "wr-8",
-    title: "The Student Who Understood Quantum Mechanics Through Dance",
-    excerpt:
-      "An unexpected lesson in multimodal learning — and why the constraint of a single representational format (equations) limits who gets to understand physics.",
-    category: "Learning Science",
-    tags: ["Multimodal Learning", "Quantum Mechanics", "Representation"],
-    readingTime: "4 min",
-    date: "2024-01",
-    featured: false,
-    url: "/writing/quantum-mechanics-through-dance",
-  },
-  // Poetry & Literary
-  {
-    id: "wr-9",
-    title: "Di Batas Sinar dan Bayang — Puisi tentang Gelombang Cahaya",
-    excerpt:
-      "Antara dualitas partikel dan gelombang, ada puisi yang menunggu untuk ditulis. Cahaya adalah metafora terbaik untuk segala sesuatu yang tidak bisa sepenuhnya dipahami.",
-    category: "Poetry",
-    tags: ["Puisi", "Cahaya", "Fisika & Sastra"],
-    readingTime: "3 min",
-    date: "2025-02",
-    featured: false,
-    url: "/writing/di-batas-sinar-dan-bayang",
-  },
-  {
-    id: "wr-10",
-    title: "Gravitasi Perasaan — Kumpulan Puisi",
-    excerpt:
-      "Seperti massa yang saling tarik-menarik, ada gaya tak terlihat dalam setiap hubungan. Puisi-puisi yang lahir dari persimpangan fisika dan rasa manusia.",
-    category: "Poetry",
-    tags: ["Puisi", "Gravitasi", "Koleksi"],
-    readingTime: "5 min",
-    date: "2024-10",
-    featured: false,
-    url: "/writing/gravitasi-perasaan",
-  },
-  // Short stories (cerpen)
-  {
-    id: "wr-11",
-    title: "Lab Malam Itu — Cerpen",
-    excerpt:
-      "Seorang mahasiswa fisika, sebuah simulasi yang tiba-tiba hidup, dan pertanyaan yang tidak bisa dijawab oleh persamaan apapun. Cerita pendek tentang batas antara sains dan imajinasi.",
-    category: "Short Story",
-    tags: ["Cerpen", "Fiksi Ilmiah", "Mahasiswa"],
-    readingTime: "12 min",
-    date: "2025-04",
-    featured: true,
-    url: "/writing/lab-malam-itu",
-  },
-  {
-    id: "wr-12",
-    title: "Persamaan yang Belum Terbukti — Cerpen",
-    excerpt:
-      "Dua peneliti muda, satu dugaan besar, dan realita bahwa sains tidak selalu berjalan lurus. Cerpen tentang kebenaran, kegagalan, dan mengapa kita tetap mencoba.",
-    category: "Short Story",
-    tags: ["Cerpen", "Penelitian", "Drama"],
-    readingTime: "15 min",
-    date: "2024-08",
-    featured: false,
-    url: "/writing/persamaan-yang-belum-terbukti",
-  },
-  // News articles
-  {
-    id: "wr-13",
-    title: "UNJ Luncurkan Platform Simulasi Fisika Berbasis AI Pertama di Indonesia",
-    excerpt:
-      "Mahasiswa Pendidikan Fisika Universitas Negeri Jakarta berhasil mengembangkan platform pembelajaran fisika interaktif yang mengintegrasikan kecerdasan buatan dan simulasi 3D untuk siswa SMA.",
-    category: "Berita & Artikel",
-    tags: ["UNJ", "EdTech", "AI", "Berita"],
-    readingTime: "4 min",
-    date: "2024-12",
-    featured: false,
-    url: "/writing/unj-platform-fisika-ai",
-  },
-  {
-    id: "wr-14",
-    title: "Krisis Pembelajaran Fisika: Mengapa Nilai PISA Indonesia Stagnan?",
-    excerpt:
-      "Analisis mendalam terhadap tren hasil PISA Indonesia dalam literasi sains selama satu dekade terakhir — dan apa yang perlu berubah dalam kurikulum nasional kita.",
-    category: "Berita & Artikel",
-    tags: ["PISA", "Kurikulum", "Analisis Data", "Kebijakan"],
-    readingTime: "7 min",
-    date: "2024-06",
-    featured: false,
-    url: "/writing/krisis-pisa-fisika-indonesia",
+    id: "tf-4",
+    abbr: "MER",
+    name: "Multiple External Representations",
+    description:
+      "Integrating analytical equations, dynamic phase diagrams, and real-time canvas simulations to anchor multi-perspective physics understanding.",
+    color: "from-amber-600 to-orange-700",
   },
 ];
 
-// ============================================================
-// EXPERIENCES — Academic & Non-Academic (University era)
-// Only entries relevant to research, education, tech, and data
-// ============================================================
-
-export const experiences = [
-  // Academic Achievements
+export const timeline = [
   {
-    id: "exp-1",
-    type: "achievement",
-    title: "1st Place — Lomba Inovasi Media Pembelajaran Fisika",
-    organization: "Himpunan Mahasiswa Fisika UNJ",
-    year: "2024",
-    description: "Meraih juara pertama dalam kompetisi inovasi media pembelajaran fisika tingkat nasional dengan proyek simulasi virtual lab berbasis web.",
-    tags: ["Kompetisi", "Virtual Lab", "Pendidikan Fisika"],
-    color: "from-amber-500 to-orange-500",
-    icon: "🏆",
+    year: "2022",
+    type: "education",
+    title: "Enrolled in Pendidikan Fisika — UNJ",
+    description:
+      "Began undergraduate study at Universitas Negeri Jakarta, building deep foundations in physics content, pedagogy, cognitive psychology, and educational research.",
+    highlight: false,
   },
   {
-    id: "exp-2",
-    type: "achievement",
-    title: "Best Paper — International Conference on Physics Education 2023",
-    organization: "ICPE 2023",
     year: "2023",
-    description: "Paper tentang learning analytics dashboard untuk identifikasi miskonsepsi fisika mendapat penghargaan best paper dari panel reviewer internasional.",
-    tags: ["Konferensi", "Publikasi", "Internasional"],
-    color: "from-violet-500 to-purple-500",
-    icon: "📄",
-  },
-  {
-    id: "exp-3",
-    type: "training",
-    title: "Google Data Analytics Professional Certificate",
-    organization: "Google / Coursera",
-    year: "2024",
-    description: "Menyelesaikan sertifikasi data analytics dari Google — mencakup SQL, R programming, Tableau, dan end-to-end data analysis workflow.",
-    tags: ["Data Analytics", "SQL", "R", "Tableau"],
-    color: "from-blue-500 to-cyan-500",
-    icon: "📊",
-  },
-  {
-    id: "exp-4",
-    type: "training",
-    title: "Pelatihan Riset Pendidikan & Metodologi Kuantitatif",
-    organization: "Universitas Negeri Jakarta — LPPM",
-    year: "2023",
-    description: "Pelatihan intensif selama 40 jam tentang desain penelitian kuasi-eksperimental, analisis IRT dengan R, dan penulisan artikel ilmiah.",
-    tags: ["Metodologi", "IRT", "R", "Riset"],
-    color: "from-emerald-500 to-teal-500",
-    icon: "🔬",
-  },
-  {
-    id: "exp-5",
-    type: "organization",
-    title: "Kepala Divisi Teknologi — Himpunan Mahasiswa Fisika",
-    organization: "HMF UNJ",
-    year: "2023–2024",
-    description: "Memimpin divisi teknologi dalam organisasi kemahasiswaan — mengkoordinasi pengembangan website HMF, platform event, dan digitalisasi administrasi.",
-    tags: ["Kepemimpinan", "Web Dev", "Organisasi"],
-    color: "from-indigo-500 to-blue-500",
-    icon: "🎓",
-  },
-  {
-    id: "exp-6",
-    type: "training",
-    title: "Bangkit Academy 2024 — Machine Learning Path",
-    organization: "Google · GoTo · Traveloka (Bangkit)",
-    year: "2024",
-    description: "Program bootcamp ML intensif 5 bulan — mempelajari TensorFlow, Computer Vision, NLP, dan deployment model ML ke Google Cloud.",
-    tags: ["Machine Learning", "TensorFlow", "NLP", "Cloud"],
-    color: "from-rose-500 to-pink-500",
-    icon: "🤖",
-  },
-  {
-    id: "exp-7",
     type: "achievement",
-    title: "Finalis GEMASTIK XVII — Kategori Pengembangan Perangkat Lunak",
-    organization: "Kemendikbud-Ristek / Puspresnas",
-    year: "2024",
-    description: "Mewakili UNJ sebagai finalis Gemastik XVII dengan proyek FisikaSeru — kompetisi teknologi terbesar untuk mahasiswa seluruh Indonesia.",
-    tags: ["Gemastik", "Kompetisi Nasional", "EdTech"],
-    color: "from-cyan-500 to-blue-500",
-    icon: "🏅",
+    title: "Pelatih KIR SMAN 78 & Pembimbing OPSI",
+    description:
+      "Formulated curriculum for extracurricular research at SMAN 78 Jakarta, mentoring student teams to national finalist qualification in Olimpiade Penelitian Siswa Indonesia (OPSI).",
+    highlight: true,
   },
   {
-    id: "exp-8",
-    type: "training",
-    title: "Workshop Penulisan Ilmiah & Science Communication",
-    organization: "Indonesian Young Scientist Association",
-    year: "2023",
-    description: "Workshop intensif tentang science communication, penulisan artikel populer ilmiah, dan strategi publikasi di jurnal terindeks Scopus.",
-    tags: ["Science Comm", "Penulisan", "Publikasi"],
-    color: "from-orange-500 to-amber-500",
-    icon: "✍️",
+    year: "2024",
+    type: "achievement",
+    title: "Kadiv HIK KPM UNJ & Scientific Comm.",
+    description:
+      "Led scientific communication division at Kelompok Peneliti Muda UNJ, coordinating research media dissemination, scholarly podcasts, and departmental publications.",
+    highlight: false,
+  },
+  {
+    year: "2024",
+    type: "project",
+    title: "PHYSION & FisikaSeru 3.0 Architecture",
+    description:
+      "Engineered mobile-first and high-performance physics virtual laboratories with numerical ODE integration (Euler-Cromer) and interactive Canvas 2D render loops.",
+    highlight: false,
+  },
+  {
+    year: "2025",
+    type: "research",
+    title: "Conceptra & Kok Bisa? Analytics",
+    description:
+      "Constructed a forensic synthesis observatory indexing 17,000+ physics misconception papers and analyzed 200,000+ science discourse comments with IndoBERT transformers.",
+    highlight: true,
+  },
+  {
+    year: "2026",
+    type: "education",
+    title: "PPKD Jakarta Pusat — Data Science",
+    description:
+      "Completed intensive vocational training in Python data engineering, predictive machine learning pipelines, and applied AI systems.",
+    highlight: false,
   },
 ];
+
+export const skills = {
+  frontend: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "HTML5 Canvas 2D",
+    "Vite",
+  ],
+  backend: [
+    "Python",
+    "FastAPI",
+    "Node.js",
+    "PostgreSQL",
+    "Supabase",
+    "RESTful APIs",
+  ],
+  simulation: [
+    "Canvas 2D Render Engine",
+    "Numerical Integration",
+    "Euler-Cromer Method",
+    "Web Workers",
+    "Vector Kinematics",
+  ],
+  tools: [
+    "Git & GitHub",
+    "Docker",
+    "Streamlit",
+    "Ollama (Local LLMs)",
+    "Hugging Face",
+    "VS Code",
+  ],
+  research: [
+    "Physics Misconception Analysis",
+    "Applied NLP (IndoBERT)",
+    "Systematic Literature Review",
+    "SPSS & Jamovi",
+    "Curriculum Scaffolding",
+  ],
+};

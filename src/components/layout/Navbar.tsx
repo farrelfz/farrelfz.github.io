@@ -45,7 +45,7 @@ export function Navbar() {
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(180_70%_38%)] to-[hsl(217_91%_60%)] opacity-90 group-hover:opacity-100 transition-opacity" />
               <Atom size={16} className="relative z-10 text-white" strokeWidth={2} />
             </div>
-            <span className="text-sm font-bold tracking-tight text-foreground">mfarreldavaf</span>
+            <span className="text-sm font-bold tracking-tight text-foreground">Farrel Dava</span>
           </Link>
 
           {/* Desktop Nav */}

@@ -1,34 +1,23 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { writingArticles } from "@/data/portfolio";
-import { FadeIn, SectionLabel, StaggerContainer, StaggerItem } from "@/components/ui/AnimationPrimitives";
-import { ArrowRight, BookOpen, Clock, PenLine } from "lucide-react";
+import { writings } from "@/data/portfolio";
+import { FadeIn, SectionLabel } from "@/components/ui/AnimationPrimitives";
+import { ArrowRight, Clock, PenLine } from "lucide-react";
 
-const literaryCategories = ["Poetry", "Short Story", "Berita & Artikel"];
-
-const categoryColors: Record<string, string> = {
-  "Poetry": "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20",
-  "Short Story": "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
-  "Berita & Artikel": "bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/20",
-};
-
-// Only show literary + journalistic writing
-const literaryArticles = writingArticles.filter((a) => literaryCategories.includes(a.category));
-const allCategories = ["All", ...literaryCategories];
+const categories = ["All", ...Array.from(new Set(writings.map((w) => w.category)))];
 
 const WritingPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
-    document.title = "Writing — Muhamad Farrel Dava Fauzan";
+    document.title = "Writing & Perspectives — Muhamad Farrel Dava Fauzan";
   }, []);
 
   const filtered = activeCategory === "All"
-    ? literaryArticles
-    : literaryArticles.filter((a) => a.category === activeCategory);
+    ? writings
+    : writings.filter((w) => w.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -41,64 +30,32 @@ const WritingPage = () => {
             <FadeIn>
               <div className="label-research mb-6 w-fit flex items-center gap-1.5">
                 <PenLine size={12} />
-                Essays & Perspectives
+                Critical Perspectives & Essays
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h1 className="h-display text-5xl sm:text-6xl lg:text-7xl text-foreground mb-5 leading-tight">
-                Writing &{" "}
-                <span className="text-gradient-warm">Insights</span>
+              <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl text-foreground mb-5 leading-tight">
+                Writing & <span className="text-gradient-warm">Perspectives</span>
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
-                Essays, perspectives, and science communication on physics education, AI, learning science,
-                and the future of how we understand the world. Not academic papers — just honest thinking.
+                Tulisan konseptual, analisis pedagogi, dan catatan teknis di seputar pendidikan fisika, penerapan kecerdasan buatan, dan komunikasi sains.
               </p>
-            </FadeIn>
-
-            {/* Distinction note */}
-            <FadeIn delay={0.3}>
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
-                {[
-                  { icon: "🔬", label: "Research", desc: "Active investigations & ongoing studies", href: "/research" },
-                  { icon: "📄", label: "Publications", desc: "Peer-reviewed & DOI-indexed papers", href: "/publications" },
-                  { icon: "✍️", label: "Writing", desc: "Essays, perspectives & science comm.", href: "/writing", active: true },
-                ].map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className={`flex items-start gap-3 p-3 rounded-xl border text-left transition-all duration-200 ${
-                      item.active
-                        ? "border-[hsl(180_70%_38%/0.4)] bg-[hsl(180_70%_38%/0.06)]"
-                        : "border-border hover:border-foreground/20 hover:bg-muted/50"
-                    }`}
-                  >
-                    <span className="text-lg">{item.icon}</span>
-                    <div>
-                      <div className={`text-xs font-bold ${item.active ? "text-[hsl(180_70%_30%)] dark:text-[hsl(180_70%_60%)]" : "text-foreground"}`}>
-                        {item.label}
-                      </div>
-                      <div className="text-[10px] text-muted-foreground">{item.desc}</div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
             </FadeIn>
           </div>
         </section>
 
-
-        {/* All articles */}
-        <section className="section-padding">
+        {/* Filter & Articles */}
+        <section className="section-padding border-t">
           <div className="container-max">
             {/* Category filter */}
             <div className="flex flex-wrap gap-2 mb-10">
-              {allCategories.map((cat) => (
+              {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 border ${
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all border ${
                     activeCategory === cat
                       ? "bg-foreground text-background border-foreground"
                       : "bg-card text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground"
@@ -109,64 +66,44 @@ const WritingPage = () => {
               ))}
             </div>
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeCategory}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="flex flex-col gap-4"
-              >
-                {filtered.map((article, i) => (
-                  <motion.div
-                    key={article.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.05, duration: 0.4 }}
-                    className="group flex flex-col sm:flex-row gap-5 p-6 rounded-2xl border bg-card hover:shadow-md hover:border-foreground/15 transition-all duration-300"
-                  >
-                    {/* Number */}
-                    <div className="flex-shrink-0 font-mono text-xs font-bold text-muted-foreground w-6 pt-0.5">
-                      {String(i + 1).padStart(2, "0")}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {filtered.map((item) => (
+                <div
+                  key={item.id}
+                  className="p-8 rounded-3xl border bg-card flex flex-col justify-between hover:shadow-lg hover:border-[hsl(180_70%_38%/0.4)] transition-all"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-muted border text-muted-foreground">
+                        {item.category}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-muted-foreground font-mono">
+                        <Clock size={11} /> {item.readingTime}
+                      </span>
                     </div>
 
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2 mb-2.5">
-                        <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold border ${categoryColors[article.category] || ""}`}>
-                          {article.category}
-                        </span>
-                        <span className="flex items-center gap-1 text-[10px] text-muted-foreground font-mono">
-                          <Clock size={9} /> {article.readingTime}
-                        </span>
-                        <span className="text-[10px] font-mono text-muted-foreground">{article.date}</span>
-                      </div>
-                      <h3 className="text-sm font-bold text-foreground leading-snug mb-2 group-hover:text-[hsl(180_70%_30%)] dark:group-hover:text-[hsl(180_70%_60%)] transition-colors">
-                        {article.title}
-                      </h3>
-                      <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2">{article.excerpt}</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {article.tags.map((tag) => (
-                          <span key={tag} className="badge-tag text-[10px]">{tag}</span>
-                        ))}
-                      </div>
-                    </div>
+                    <h2 className="text-xl font-bold text-foreground mb-3 leading-snug">
+                      {item.title}
+                    </h2>
 
-                    {/* Read link */}
-                    <div className="flex-shrink-0 self-center">
-                      <Link
-                        to={article.url}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border text-xs font-bold text-muted-foreground hover:text-foreground hover:border-foreground/30 hover:bg-muted transition-all"
-                      >
-                        <BookOpen size={12} />
-                        Read
-                      </Link>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                      {item.excerpt}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-border/60">
+                    <span className="text-xs font-mono text-muted-foreground">{item.date}</span>
+                    <Link
+                      to={`/writing/${item.slug}`}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-foreground hover:text-[hsl(180_70%_38%)] transition-colors group"
+                    >
+                      Baca Selengkapnya
+                      <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
