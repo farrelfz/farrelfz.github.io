@@ -1,9 +1,48 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, BookOpen, FlaskConical, Github, Instagram, Mail, Sparkles, Twitter } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import { ParticleCanvas } from "@/components/ui/ParticleCanvas";
+
+const rotatingWords = [
+  "Misconception Research",
+  "Virtual Laboratories",
+  "Applied AI & NLP",
+  "Interactive Simulations",
+  "Evidence-Based EdTech",
+];
+
+function RotatingWord() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2600);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <span
+      className="relative inline-flex overflow-hidden align-bottom pb-1 font-bold"
+      style={{ minWidth: "16ch", height: "1.4em" }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={rotatingWords[index]}
+          initial={{ y: 24, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -24, opacity: 0 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="text-gradient-primary absolute inset-0 whitespace-nowrap"
+        >
+          {rotatingWords[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -83,7 +122,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-base sm:text-lg font-bold text-foreground/90 mb-4 flex flex-wrap items-center gap-2"
+              className="text-base sm:text-lg font-bold text-foreground/90 mb-3 flex flex-wrap items-center gap-2"
             >
               <span className="text-[hsl(180_70%_35%)] dark:text-[hsl(180_70%_55%)]">Physics Education Researcher</span>
               <span className="text-muted-foreground/50 hidden sm:inline">·</span>
@@ -92,12 +131,23 @@ export function Hero() {
               <span className="text-indigo-600 dark:text-indigo-400">AI for Education</span>
             </motion.div>
 
+            {/* Dynamic Rotating Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-base sm:text-lg font-medium text-foreground/80 mb-4 flex items-center gap-2 flex-wrap"
+            >
+              <span className="text-muted-foreground">Building learning through</span>
+              <RotatingWord />
+            </motion.div>
+
             {/* Supporting statement */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl mb-8"
+              className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl mb-7"
             >
               {profile.tagline}
             </motion.p>
@@ -107,7 +157,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              className="flex flex-wrap items-center gap-3 mb-8"
+              className="flex flex-wrap items-center gap-3 mb-6"
             >
               <Link
                 to="/research"
@@ -176,9 +226,40 @@ export function Hero() {
                 X / Twitter
               </a>
             </motion.div>
+
+            {/* Authentic Stat Cards Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.75 }}
+              className="pt-6 border-t border-border/60 mt-6"
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
+                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="w-8 h-8 rounded-full bg-violet-500/10 flex items-center justify-center text-sm mb-1">🔬</div>
+                  <span className="text-xl font-black text-foreground tracking-tight">17,000+</span>
+                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Papers Synthesized</span>
+                </div>
+                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-sm mb-1">💬</div>
+                  <span className="text-xl font-black text-foreground tracking-tight">200k+</span>
+                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Comments Mined</span>
+                </div>
+                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-sm mb-1">⚛️</div>
+                  <span className="text-xl font-black text-foreground tracking-tight">1,002</span>
+                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Misconceptions Mapped</span>
+                </div>
+                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-sm mb-1">⚙️</div>
+                  <span className="text-xl font-black text-foreground tracking-tight">5</span>
+                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Flagship Platforms</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Right: Academic profile card */}
+          {/* Right: Academic profile card with FLOATING CARDS */}
           <motion.div
             initial={{ opacity: 0, x: 30, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -186,11 +267,77 @@ export function Hero() {
             className="lg:col-span-5 flex justify-center items-center"
           >
             <div className="relative w-full max-w-sm">
+              {/* Background ambient glow */}
               <div
-                className="absolute -inset-4 rounded-3xl blur-2xl opacity-20 pointer-events-none"
-                style={{ background: "linear-gradient(135deg, hsl(217 91% 60%), hsl(180 70% 38%))" }}
+                className="absolute -inset-6 rounded-full blur-3xl opacity-25 pointer-events-none"
+                style={{ background: "radial-gradient(circle, hsl(217 91% 60%) 0%, hsl(180 70% 38%) 60%, transparent 100%)" }}
               />
-              <div className="relative rounded-3xl overflow-hidden border bg-card shadow-2xl p-6">
+
+              {/* Decorative dashed rings */}
+              <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full border-2 border-dashed border-[hsl(217_91%_60%/0.25)] opacity-60 pointer-events-none" />
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border-2 border-dashed border-[hsl(180_70%_38%/0.25)] opacity-60 pointer-events-none" />
+
+              {/* FLOATING CARD 1 — Top Left: Physics Education */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -left-6 sm:-left-8 top-8 z-20 px-3.5 py-2.5 rounded-2xl border bg-card/95 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center text-sm">
+                    ⚛️
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-muted-foreground font-medium">Physics Education</div>
+                    <div className="text-xs font-bold text-foreground">UNJ Jakarta</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* FLOATING CARD 2 — Bottom Right: Open to Collaborate */}
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+                className="absolute -right-6 sm:-right-8 bottom-12 z-20 px-3.5 py-2.5 rounded-2xl border bg-card/95 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <div>
+                    <div className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">Open to Collaborate</div>
+                    <div className="text-[10px] text-muted-foreground">Research & EdTech</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* FLOATING CARD 3 — Top Right: AI for Education */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+                className="absolute -right-3 sm:-right-5 -top-3 z-20 px-3 py-1.5 rounded-xl border bg-card/95 backdrop-blur-md shadow-lg"
+              >
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs">🧠</span>
+                  <span className="text-[11px] font-bold text-foreground">AI for Education</span>
+                </div>
+              </motion.div>
+
+              {/* FLOATING CARD 4 — Bottom Left: Interactive Sim Engine */}
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
+                className="absolute -left-3 sm:-left-5 -bottom-3 z-20 px-3 py-1.5 rounded-xl border bg-card/95 backdrop-blur-md shadow-lg"
+              >
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs">⚡</span>
+                  <span className="text-[11px] font-bold text-foreground">Conceptra · PHYSION</span>
+                </div>
+              </motion.div>
+
+              {/* Main Photo Card */}
+              <div className="relative rounded-3xl overflow-hidden border bg-card shadow-2xl p-6 z-10">
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden border mb-5 shadow-inner">
                   <img
                     src={profile.avatar}
