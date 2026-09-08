@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { projects, writings, profile } from "@/data/portfolio";
+import { useTheme } from "@/hooks/useTheme";
 
 interface CommandPaletteProps {
   open?: boolean;
@@ -37,6 +38,7 @@ interface CommandPaletteProps {
 export function CommandPalette({ open: controlledOpen, onOpenChange: controlledOnOpenChange }: CommandPaletteProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const navigate = useNavigate();
+  const { isDark, toggleTheme } = useTheme();
 
   const isControlled = controlledOpen !== undefined;
   const isOpen = isControlled ? controlledOpen : internalOpen;
@@ -91,6 +93,12 @@ export function CommandPalette({ open: controlledOpen, onOpenChange: controlledO
             <span className="ml-auto text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 border border-amber-500/20">
               Interactive
             </span>
+          </CommandItem>
+
+          <CommandItem onSelect={() => handleSelect(toggleTheme)}>
+            <Sparkles className="mr-2 h-4 w-4 text-amber-400" />
+            <span>Ganti Tema ({isDark ? "Aktifkan Mode Terang" : "Aktifkan Mode Gelap"})</span>
+            <span className="ml-auto text-xs text-muted-foreground font-mono">{isDark ? "Light" : "Dark"}</span>
           </CommandItem>
 
           <CommandItem onSelect={() => handleSelect(copyEmail)}>

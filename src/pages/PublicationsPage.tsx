@@ -4,10 +4,14 @@ import { Footer } from "@/components/layout/Footer";
 import { projects, profile } from "@/data/portfolio";
 import { FadeIn, SectionLabel, StaggerContainer, StaggerItem } from "@/components/ui/AnimationPrimitives";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Layers, Sparkles, AlertCircle } from "lucide-react";
+import { ExternalLink, Github, Layers, Sparkles, AlertCircle, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { CiteModal, type CitationItem } from "@/components/ui/CiteModal";
 
 const PublicationsPage = () => {
+  const [selectedCitation, setSelectedCitation] = useState<CitationItem | null>(null);
+
   useEffect(() => {
     document.title = "Research & Selected Works — Muhamad Farrel Dava Fauzan";
   }, []);
@@ -109,6 +113,24 @@ const PublicationsPage = () => {
                             <Github size={13} /> Repositori
                           </a>
                         )}
+
+                        <button
+                          onClick={() =>
+                            setSelectedCitation({
+                              id: item.id,
+                              title: item.title,
+                              authors: ["Muhamad Farrel Dava Fauzan"],
+                              year: item.year,
+                              type: "Software / Research Platform",
+                              publisher: "Universitas Negeri Jakarta",
+                              url: item.githubUrl || "https://github.com/farrelfz",
+                            })
+                          }
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border bg-primary/10 hover:bg-primary/20 text-xs font-semibold text-primary transition-all shadow-sm"
+                          title="Generate Sitasi Akademik (BibTeX / APA / IEEE)"
+                        >
+                          <Quote size={12} /> Sitasi
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -117,6 +139,13 @@ const PublicationsPage = () => {
             </StaggerContainer>
           </div>
         </section>
+
+        {/* Academic Citation Modal */}
+        <CiteModal
+          open={!!selectedCitation}
+          onOpenChange={(open) => !open && setSelectedCitation(null)}
+          citation={selectedCitation}
+        />
       </main>
       <Footer />
     </div>

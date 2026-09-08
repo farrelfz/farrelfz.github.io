@@ -7,6 +7,7 @@ import { FadeIn, SectionLabel, StaggerContainer, StaggerItem } from "@/component
 import { ParticleCanvas } from "@/components/ui/ParticleCanvas";
 import { Atom, Brain, Cpu, Database, ExternalLink, FileSearch, GitBranch, Github, Layers, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ResearchKnowledgeGraph } from "@/components/sections/ResearchKnowledgeGraph";
 
 const ResearchPage = () => {
   useEffect(() => {
@@ -149,6 +150,9 @@ const ResearchPage = () => {
             </FadeIn>
           </div>
         </section>
+
+        {/* Section 30B: Interactive Force-Directed Knowledge Graph */}
+        <ResearchKnowledgeGraph />
 
         {/* Section 8: Technical Skills Matrix */}
         <section className="section-padding border-t bg-muted/10">

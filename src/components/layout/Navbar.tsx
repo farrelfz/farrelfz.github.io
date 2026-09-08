@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { Menu, X, Atom, Search } from "lucide-react";
+import { Menu, X, Atom, Search, FileText } from "lucide-react";
 import { navigation } from "@/data/portfolio";
 import { CommandPalette } from "@/components/ui/CommandPalette";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { QuickCVModal } from "@/components/ui/QuickCVModal";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [cvOpen, setCvOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
@@ -74,8 +77,19 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* CTA & Search */}
-          <div className="hidden lg:flex items-center gap-2.5">
+          {/* CTA & Search & Theme */}
+          <div className="hidden lg:flex items-center gap-2">
+            <ThemeToggle />
+
+            <button
+              onClick={() => setCvOpen(true)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl border bg-card/70 hover:bg-muted text-xs font-semibold text-foreground transition-all duration-200 shadow-sm"
+              title="Lihat Ringkasan CV Akademik"
+            >
+              <FileText size={13} className="text-primary" />
+              <span>Quick CV</span>
+            </button>
+
             <button
               onClick={() => setPaletteOpen(true)}
               className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-card/70 hover:bg-muted text-xs font-medium text-muted-foreground hover:text-foreground transition-all duration-200 shadow-sm"
@@ -112,7 +126,8 @@ export function Navbar() {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-1.5">
+            <ThemeToggle />
             <button
               onClick={() => setPaletteOpen(true)}
               className="w-9 h-9 flex items-center justify-center rounded-lg border bg-card hover:bg-muted text-foreground transition-colors"
@@ -197,6 +212,9 @@ export function Navbar() {
 
       {/* Global Command Palette */}
       <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
+
+      {/* Global Quick CV Modal */}
+      <QuickCVModal open={cvOpen} onOpenChange={setCvOpen} />
     </>
   );
 }

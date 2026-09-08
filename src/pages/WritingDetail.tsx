@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { writings } from "@/data/portfolio";
 import { FadeIn } from "@/components/ui/AnimationPrimitives";
 import { ArrowLeft, Clock, CalendarDays } from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const articlesContent: Record<string, { paragraphs: string[]; quote?: string; headings?: string[] }> = {
   "rekonseptualisasi-pendidikan-fisika": {
@@ -65,8 +66,20 @@ const WritingDetail = () => {
     headings: ["Perspektif"],
   };
 
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
     <div className="min-h-screen bg-background">
+      {/* Top Reading Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[hsl(180_70%_38%)] via-[hsl(217_91%_60%)] to-[hsl(263_70%_60%)] origin-left z-[60] pointer-events-none"
+        style={{ scaleX }}
+      />
       <Navbar />
       <main>
         <article className="pt-32 pb-20">
