@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { projects } from "@/data/portfolio";
 import { FadeIn, SectionLabel, StaggerContainer, StaggerItem } from "@/components/ui/AnimationPrimitives";
 import { FlaskConical, ExternalLink, Github, ArrowRight } from "lucide-react";
+import { PhysicsPlayground } from "@/components/sections/PhysicsPlayground";
 
 const LaboratoryPage = () => {
   useEffect(() => {
@@ -105,6 +106,9 @@ const LaboratoryPage = () => {
             </StaggerContainer>
           </div>
         </section>
+
+        {/* Live Interactive Physics Playground */}
+        <PhysicsPlayground />
       </main>
       <Footer />
     </div>

@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { Menu, X, Atom } from "lucide-react";
+import { Menu, X, Atom, Search } from "lucide-react";
 import { navigation } from "@/data/portfolio";
+import { CommandPalette } from "@/components/ui/CommandPalette";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [paletteOpen, setPaletteOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
@@ -72,11 +74,24 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* CTA & Search */}
+          <div className="hidden lg:flex items-center gap-2.5">
+            <button
+              onClick={() => setPaletteOpen(true)}
+              className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-card/70 hover:bg-muted text-xs font-medium text-muted-foreground hover:text-foreground transition-all duration-200 shadow-sm"
+              title="Cari (Ctrl + K)"
+              aria-label="Cari riset atau proyek"
+            >
+              <Search size={14} className="text-primary" />
+              <span>Cari...</span>
+              <kbd className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono bg-muted text-muted-foreground border border-border/80">
+                ⌘K
+              </kbd>
+            </button>
+
             <Link
               to="/contact"
-              className="px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-300"
+              className="px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-300 shadow-sm"
               style={{
                 background: "hsl(180 70% 38%)",
                 color: "white",
@@ -96,13 +111,21 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
-          <button
-            id="mobile-menu-btn"
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative w-9 h-9 flex items-center justify-center rounded-lg bg-muted/80 hover:bg-muted transition-colors"
-            aria-label="Toggle menu"
-          >
+          {/* Mobile Actions */}
+          <div className="flex lg:hidden items-center gap-2">
+            <button
+              onClick={() => setPaletteOpen(true)}
+              className="w-9 h-9 flex items-center justify-center rounded-lg border bg-card hover:bg-muted text-foreground transition-colors"
+              aria-label="Cari (Ctrl + K)"
+            >
+              <Search size={16} />
+            </button>
+            <button
+              id="mobile-menu-btn"
+              onClick={() => setIsOpen(!isOpen)}
+              className="relative w-9 h-9 flex items-center justify-center rounded-lg bg-muted/80 hover:bg-muted transition-colors"
+              aria-label="Toggle menu"
+            >
             <AnimatePresence mode="wait">
               {isOpen ? (
                 <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
@@ -114,7 +137,8 @@ export function Navbar() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </button>
+            </button>
+          </div>
         </div>
       </motion.header>
 
@@ -170,6 +194,9 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Global Command Palette */}
+      <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
     </>
   );
 }

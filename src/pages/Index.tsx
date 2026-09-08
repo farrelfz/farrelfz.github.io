@@ -9,6 +9,7 @@ import { ResearchInterests } from "@/components/sections/ResearchInterests";
 import { Publications } from "@/components/sections/Publications";
 import { WritingPreview } from "@/components/sections/WritingPreview";
 import { TimelineSection } from "@/components/sections/TimelineSection";
+import { PhysicsPlayground } from "@/components/sections/PhysicsPlayground";
 import { Contact } from "@/components/sections/Contact";
 import { siteConfig } from "@/data/portfolio";
 
@@ -33,6 +34,7 @@ const Index = () => {
         <Philosophy />
         <ResearchInterests />
         <FeaturedProjects />
+        <PhysicsPlayground />
         <Publications />
         <WritingPreview />
         <TimelineSection />
