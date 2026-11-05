@@ -49,7 +49,7 @@ const INITIAL_NODES: Node[] = [
     vx: 0,
     vy: 0,
     description: "Fondasi domain pedagogi: diagnosis miskonsepsi fisika, conceptual change theory, dan scaffolding inkuiri terbimbing.",
-    metric: "1,002 Variasi Miskonsepsi",
+    metric: "8 Domain Fisika",
   },
   {
     id: "edtech",
@@ -74,8 +74,8 @@ const INITIAL_NODES: Node[] = [
     y: 150,
     vx: 0,
     vy: 0,
-    description: "Perangkat analisis komputasional: transformer IndoBERT, knowledge graph OpenAlex, orkestrasi local LLM via Ollama.",
-    metric: "200k+ Komentar Dianalisis",
+    description: "Perangkat analisis komputasional: NLP extraction, knowledge graph OpenAlex, dan graph modeling untuk riset pendidikan fisika.",
+    metric: "NLP + OpenAlex Pipeline",
   },
   {
     id: "conceptra",
@@ -88,7 +88,7 @@ const INITIAL_NODES: Node[] = [
     vx: 0,
     vy: 0,
     description: "Observatory sintesis miskonsepsi fisika pertama di Indonesia mengindeks 17.755 paper riset.",
-    metric: "17,755 Papers Mined",
+    metric: "Literature-Mining Pipeline",
     link: "https://github.com/farrelfz/conceptra",
   },
   {
@@ -115,8 +115,8 @@ const INITIAL_NODES: Node[] = [
     y: 220,
     vx: 0,
     vy: 0,
-    description: "Studi komputasional menambang 202.429 komentar sains YouTube dengan akurasi klasifikasi 97.73%.",
-    metric: "97.73% Accuracy",
+    description: "Studi komputasional terhadap komentar sains YouTube: pipeline analisis diskursus ilmiah berbasis NLP untuk mengungkap pola rasa ingin tahu, miskonsepsi, dan penalaran informal publik.",
+    metric: "NLP Discourse Pipeline",
     link: "https://github.com/farrelfz/kokbisa-analytics",
   },
   {

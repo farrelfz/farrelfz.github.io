@@ -32,7 +32,7 @@ export const profile = {
   shortName: "Farrel Dava",
   role: "Physics Education Researcher · Educational Technology Developer · AI for Education",
   tagline:
-    "Building evidence-based educational systems at the intersection of physics education, AI, and computational research.",
+    "Building evidence-based educational technology at the intersection of physics education, AI, and computational research.",
   secondaryTagline:
     "Exploring how AI and computational methods can strengthen Physics Education Research and educational technology.",
   location: "Jakarta Barat, Indonesia",
@@ -322,7 +322,7 @@ export const projects: Project[] = [
     subtitle: "NLP Knowledge Graph for Physics Misconceptions",
     domain: "Physics Education Research + NLP + Knowledge Graph + Literature Mining",
     summary:
-      "The Indonesian Physics Misconception Observatory (1996–2026): A systematic literature mining system and knowledge graph mapping 1,002 physics misconception variants across 17,755 verified research articles with strict invariant validation.",
+      "Conceptra is an NLP-driven knowledge graph for physics misconceptions — a systematic literature-mining system that maps how Indonesian students misunderstand physics, built with OpenAlex API integration, NLP extraction, and graph modeling.",
     description:
       "Conceptra systematically maps physics misconceptions documented across decades of Indonesian physics education research. To ensure research-grade data integrity, the pipeline implements strict invariant checks against fabricated metadata and verifies articles against OpenAlex APIs. The platform equips researchers and educators with an interactive analytics dashboard, topic evolution trees, and misconception-to-concept graph representations.",
     problem:
@@ -336,9 +336,9 @@ export const projects: Project[] = [
     featured: true,
     year: 2024,
     metrics: [
-      "17,755 verified research articles indexed",
-      "1,002 physics misconception variants mapped",
-      "1996–2026 comprehensive literature span",
+      "Systematic literature-mining pipeline",
+      "OpenAlex API integration with invariant validation",
+      "NLP extraction + interactive misconception graph",
     ],
     githubUrl: "https://github.com/farrelfz/conceptra",
     color: "from-blue-600 to-cyan-700",
@@ -377,13 +377,13 @@ export const projects: Project[] = [
     subtitle: "Computational Science Communication & Physics Discourse Analytics",
     domain: "NLP + Deep Learning + Science Communication + Physics Education",
     summary:
-      "Computational discourse analysis of 202,429 Indonesian YouTube comments across 35 science education videos, classifying 8 discourse acts using fine-tuned IndoBERT with 97.40% Macro F1 and 97.73% Accuracy.",
+      "A computational discourse-analytics platform examining how the Indonesian public engages with science education content — an NLP pipeline that classifies viewer comments into discourse acts to uncover patterns of scientific curiosity, misconceptions, and informal reasoning.",
     description:
-      "This computational study explores how the Indonesian public engages with science education videos outside formal classrooms. Using a fine-tuned IndoBERT deep learning model, the system classifies 202,429 viewer comments into 8 communicative discourse acts to uncover patterns of scientific curiosity, misconceptions, and informal reasoning.",
+      "This computational study explores how the Indonesian public engages with science education videos outside formal classrooms. An NLP pipeline classifies viewer comments into communicative discourse acts to surface patterns of scientific curiosity, misconceptions, and informal reasoning about physics.",
     problem:
-      "Understanding public science literacy and identifying informal physics misconceptions at scale is practically impossible with manual qualitative coding when handling hundreds of thousands of conversational comments.",
+      "Understanding public science literacy and identifying informal physics misconceptions at scale is practically impossible with manual qualitative coding when handling large volumes of conversational comments.",
     approach:
-      "Harvested and cleaned 202,429 YouTube comments from prominent Indonesian science education channels, optimized high-speed querying using DuckDB, fine-tuned an IndoBERT transformer classifier across 8 discourse categories, and exposed insights via a FastAPI backend and React 19 / Recharts dashboard.",
+      "Built a YouTube comment harvesting and NLP discourse-classification pipeline with DuckDB for high-speed querying, an IndoBERT-based classifier across discourse categories, and a FastAPI backend with a React / Recharts analytics dashboard.",
     techStack: ["Python", "IndoBERT", "FastAPI", "DuckDB", "React 19", "Vite", "Recharts"],
     category: "COMPUTATIONAL RESEARCH",
     tags: ["NLP", "IndoBERT", "Science Communication", "Discourse Analytics"],
@@ -391,10 +391,9 @@ export const projects: Project[] = [
     featured: true,
     year: 2024,
     metrics: [
-      "202,429 YouTube comments analyzed",
-      "35 science education videos investigated",
-      "8 distinct discourse acts categorized",
-      "97.40% Macro F1 · 97.73% Accuracy achieved",
+      "YouTube comment harvesting + NLP classification pipeline",
+      "Discourse-act categorization for science education content",
+      "FastAPI backend + React / Recharts analytics dashboard",
     ],
     githubUrl: "https://github.com/farrelfz/kok-bisa-physics-discourse-analytics",
     color: "from-amber-600 to-rose-700",
@@ -632,7 +631,7 @@ export const timeline = [
     type: "research",
     title: "Conceptra & Kok Bisa? Analytics",
     description:
-      "Constructed a forensic synthesis observatory indexing 17,000+ physics misconception papers and analyzed 200,000+ science discourse comments with IndoBERT transformers.",
+      "Built a literature-mining and discourse-analytics system for physics education research — OpenAlex integration, NLP extraction, and graph modeling of physics misconceptions and science communication patterns.",
     highlight: true,
   },
   {

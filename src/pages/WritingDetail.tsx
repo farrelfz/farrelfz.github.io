@@ -39,8 +39,8 @@ const articlesContent: Record<string, { paragraphs: string[]; quote?: string; he
     headings: ["Sains di Luar Dinding Sekolah", "Klasifikasi 8 Tindak Diskursus dengan IndoBERT", "Menjembatani Sains Populer dan Formal"],
     paragraphs: [
       "Di era platform video daring seperti YouTube, jutaan generasi muda Indonesia belajar konsep sains di luar kelas melalui kanal sains edukatif seperti Kok Bisa?. Pertanyaan penting bagi peneliti pendidikan adalah: bentuk percakapan dan penalaran ilmiah apa yang sebenarnya terjadi di kolom komentar video tersebut?",
-      "Melalui penambangan 202.429 komentar publik pada 35 video fisika, kami melatih model IndoBERT untuk mengenali 8 kategori tindak diskursus (discourse acts), mulai dari ekspresi rasa ingin tahu, analogi informal, miskonsepsi umum, hingga perdebatan epistemik.",
-      "Dengan akurasi 97.73%, data ini membuktikan bahwa minat publik terhadap fisika sangat masif jika disajikan dengan narasi yang relevan. Temuan ini menjadi masukan berharga bagi kurikulum formal untuk mengadopsi cara-cara komunikasi sains yang lebih membumi dan memantik rasa ingin tahu autentik."
+      "Melalui penambangan komentar publik pada video fisika edukatif, kami membangun pipeline IndoBERT untuk mengenali kategori tindak diskursus (discourse acts) — mulai dari ekspresi rasa ingin tahu, analogi informal, miskonsepsi umum, hingga perdebatan epistemik.",
+      "Pipeline ini menunjukkan bahwa minat publik terhadap fisika sangat masif jika disajikan dengan narasi yang relevan. Temuan ini menjadi masukan berharga bagi kurikulum formal untuk mengadopsi cara-cara komunikasi sains yang lebih membumi dan memantik rasa ingin tahu autentik."
     ],
     quote: "Kolom komentar media edukasi adalah cermin jujur dari literasi sains publik: di sanalah keingintahuan murni, miskonsepsi, dan dialog informal berdenyut."
   }

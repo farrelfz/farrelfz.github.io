@@ -228,7 +228,7 @@ export function Hero() {
               </a>
             </m.div>
 
-            {/* Authentic Stat Cards Grid */}
+            {/* Authentic GitHub-grounded Stat Cards */}
             <m.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -237,19 +237,19 @@ export function Hero() {
             >
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
                 <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-sm mb-1">📦</div>
+                  <span className="text-xl font-black text-foreground tracking-tight">33</span>
+                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Public Repositories</span>
+                </div>
+                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-sm mb-1">💻</div>
+                  <span className="text-xl font-black text-foreground tracking-tight">5</span>
+                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Languages & Stacks</span>
+                </div>
+                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
                   <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-sm mb-1">🔬</div>
-                  <span className="text-xl font-black text-foreground tracking-tight">17,000+</span>
-                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Papers Synthesized</span>
-                </div>
-                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-sm mb-1">💬</div>
-                  <span className="text-xl font-black text-foreground tracking-tight">200k+</span>
-                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Comments Mined</span>
-                </div>
-                <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-sm mb-1">⚛️</div>
-                  <span className="text-xl font-black text-foreground tracking-tight">1,002</span>
-                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Misconceptions Mapped</span>
+                  <span className="text-xl font-black text-foreground tracking-tight">8</span>
+                  <span className="text-[10px] text-muted-foreground font-semibold text-center">Physics Domains</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-2xl border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
                   <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-sm mb-1">⚙️</div>

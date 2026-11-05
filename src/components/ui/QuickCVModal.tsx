@@ -33,11 +33,11 @@ EXPERIENCE:
 - Pelatihan Data Science Kejuruan PPKD Jakarta Pusat (2026)
 
 FLAGSHIP PROJECTS:
-1. Conceptra — Physics Misconception Observatory (17,755 papers, 1,002 misconception variants)
-2. PHYSION — High-Fidelity Physics Virtual Laboratory (60 FPS Canvas 2D engine)
-3. Kok Bisa? Public Science Analytics (202,429 comments classified with IndoBERT, 97.73% accuracy)
-4. FisikaSeru 3.0 — Interactive Physics Learning Platform (PWA, mobile-first)
-5. Risenologi JAMS — Journal Action Management System (Sinta accreditation readiness)`;
+1. Conceptra — NLP knowledge graph for physics misconceptions (OpenAlex API, NLP extraction)
+2. PHYSION — Physics simulation & interactive calculation suite (Python)
+3. Kok Bisa? — Physics discourse analytics platform
+4. ArenaFisikaseru — Competitive physics evaluation (HydroArena & VectorArena, SMAN 78 Jakarta)
+5. Risenologi JAMS — Journal Action Management System (TypeScript, Vercel)`;
 
     navigator.clipboard.writeText(text);
     setCopied(true);
