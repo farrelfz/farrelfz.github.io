@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+# farrelfz.github.io
 
-## Project info
+Portfolio pribadi **Muhamad Farrel Dava Fauzan** — Physics Education Researcher, EdTech Developer, AI for Education.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Situs: https://farrelfz.github.io/
 
-## How can I edit this code?
+Repo ini adalah **satu-satunya sumber** untuk portfolio: kode sumber sekaligus situs yang terbit.
+Sebelumnya source code berada di repo terpisah (`science-explorer-portfolio`) dan hasil build
+di-push ke repo ini. Sekarang keduanya digabung agar tidak ada duplikasi repositori.
 
-There are several ways of editing your application.
+## Stack
 
-**Use Lovable**
+- Vite 6 + React 18 + TypeScript
+- Tailwind CSS v4 (CSS-first) + shadcn/ui (base: Radix)
+- framer-motion, react-router v7
+- Font: Inter, Playfair Display, JetBrains Mono, Space Grotesk
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Struktur
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+.
+├── index.html                  # entry Vite
+├── src/
+│   ├── components/             # layout, sections, ui
+│   ├── pages/                  # route halaman
+│   ├── data/                   # konten (proyek, publikasi, tulisan)
+│   └── assets/
+├── public/                     # aset statis + redirect URL lama
+├── .github/workflows/deploy.yml# build & deploy ke GitHub Pages
+├── PRODUCT.md                  # ringkasan produk & stack
+├── DESIGN.md                   # token desain
+└── AGENTS.md                   # konvensi kerja untuk agen/AI
 ```
 
-**Edit a file directly in GitHub**
+## Pengembangan
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm install
+npm run dev      # http://localhost:8080
+npm run build    # output ke dist/
+npm run preview  # cek hasil build
+npm run lint
+```
 
-**Use GitHub Codespaces**
+## Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Push ke `main` → workflow `.github/workflows/deploy.yml` menjalankan `npm ci`, `npm run build`,
+menyalin `dist/index.html` menjadi `dist/404.html` (fallback SPA untuk deep link), lalu
+menerbitkan `dist/` lewat GitHub Actions Pages (`build_type: workflow`).
 
-## What technologies are used for this project?
+Tidak ada branch hasil build dan tidak ada deploy key: artefak hanya hidup sebagai deployment Pages.
 
-This project is built with:
+## URL lama (redirect)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| URL lama | Tujuan |
+|---|---|
+| `/HydroArena/` | `/ArenaFisikaseru/HydroArena/` |
+| `/VectorArena/` | `/ArenaFisikaseru/VectorArena/` |
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Redirect disimpan di `public/HydroArena/` dan `public/VectorArena/` supaya tautan yang sudah
+dibagikan ke siswa tetap berfungsi meski repo arena yang lama sudah tidak ada.

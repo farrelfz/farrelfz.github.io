@@ -2,21 +2,20 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
-# Pushes the built site to the farrelfz.github.io repository (the user site,
-# served at https://farrelfz.github.io/), so the portfolio IS the root site.
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -35,26 +34,21 @@ jobs:
         run: npm run build
 
       - name: SPA fallback page
-        # GitHub Pages has no rewrite rules: serve the app shell with 404
-        # status for unknown paths so React Router can render deep links.
+        # GitHub Pages has no rewrite rules: serve the app shell for deep links.
         run: cp dist/index.html dist/404.html
 
-      - name: Deploy to farrelfz.github.io
-        # Push dist/ to the user-site repo using a dedicated deploy key.
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh-agent -a "$SSH_AUTH_SOCK" > /dev/null
-          ssh-add - <<< "${{ secrets.PAGES_DEPLOY_KEY }}"
-          mkdir -p ~/.ssh
-          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
-          cd dist
-          git init -q
-          git checkout -q -b main
-          git config user.name "deploy-bot"
-          git config user.email "actions@github.com"
-          git add -A
-          git commit -q -m "deploy: ${GITHUB_SHA::7} from science-explorer-portfolio" \
-            --allow-empty
-          git remote add origin git@github.com:farrelfz/farrelfz.github.io.git
-          git push -q origin main --force
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
