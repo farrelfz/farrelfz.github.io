@@ -476,22 +476,10 @@ export const secondaryProjects: SecondaryProject[] = [
     tags: ["Workshops", "Mentorship", "Training"],
   },
   {
-    title: "Analytics Employee",
-    description: "Exploratory data analysis and predictive HR modeling exploring retention patterns and performance factors.",
-    githubUrl: "https://github.com/farrelfz/analytics-employee",
-    tags: ["Data Science", "Python", "Predictive Modeling"],
-  },
-  {
-    title: "Insurance App",
-    description: "Interactive machine learning prediction application developed during the PPKD Data Science 2026 curriculum.",
-    githubUrl: "https://github.com/farrelfz/insurance-app",
-    tags: ["Streamlit", "Python", "Machine Learning"],
-  },
-  {
-    title: "Belajar Streamlit",
-    description: "Prototyping repository and component testing for data science web dashboards and interactive widgets.",
-    githubUrl: "https://github.com/farrelfz/belajarstreamlit",
-    tags: ["Streamlit", "Python", "Dashboard"],
+    title: "PPKD Data Science",
+    description: "Monorepo of data science projects from the PPKD 2026 curriculum: employee attrition predictive modeling, insurance claim analysis, and subscription prediction.",
+    githubUrl: "https://github.com/farrelfz/ppkd-datascience",
+    tags: ["Data Science", "Python", "Machine Learning"],
   },
 ];
 
