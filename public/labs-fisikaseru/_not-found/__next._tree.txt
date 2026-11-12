@@ -1,3 +1,0 @@
-:HL["/labs-fisikaseru/_next/static/chunks/0j1ihjqpx9am6.css","style"]
-:HL["/labs-fisikaseru/_next/static/chunks/0l.2kun74ogoo.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"wFMPkxAV4rUuqnOG4LqAU"}
