@@ -476,9 +476,9 @@ export const secondaryProjects: SecondaryProject[] = [
     tags: ["Workshops", "Mentorship", "Training"],
   },
   {
-    title: "PPKD Data Science",
-    description: "Monorepo of data science projects from the PPKD 2026 curriculum: employee attrition predictive modeling, insurance claim analysis, and subscription prediction.",
-    githubUrl: "https://github.com/farrelfz/ppkd-datascience",
+    title: "Data Science Portfolio",
+    description: "End-to-end data science projects: employee attrition prediction with an ANN, insurance cost estimation, and subscription prediction — built with Streamlit and TensorFlow.",
+    githubUrl: "https://github.com/farrelfz/data-science-farrelfz",
     tags: ["Data Science", "Python", "Machine Learning"],
   },
 ];
