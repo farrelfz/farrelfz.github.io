@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { m } from "framer-motion";
-import { ArrowRight, Github, Layers, Sparkles } from "lucide-react";
+import { ArrowRight, Github, Globe, Layers, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -123,6 +123,19 @@ export function ProjectCard({ project, variant = "featured" }: ProjectCardProps)
                 className="transition-transform group-hover/link:translate-x-0.5"
               />
             </Link>
+
+            {project.siteUrl && (
+              <a
+                href={project.siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} live application`}
+                className="inline-flex h-11 items-center gap-1.5 px-4 rounded-xl border bg-background hover:bg-muted text-xs font-semibold text-foreground transition-all"
+              >
+                <Globe size={13} aria-hidden="true" />
+                Live App
+              </a>
+            )}
 
             {project.githubUrl && (
               <a

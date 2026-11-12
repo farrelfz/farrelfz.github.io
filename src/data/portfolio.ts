@@ -307,9 +307,10 @@ export interface Project {
   tags: string[];
   status: string;
   featured: boolean;
+  githubUrl?: string;
+  siteUrl?: string;
   year: number;
   metrics: string[];
-  githubUrl?: string;
   demoUrl?: string;
   note?: string;
   color?: string;
