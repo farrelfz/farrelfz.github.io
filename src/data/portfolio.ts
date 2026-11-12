@@ -459,6 +459,7 @@ export interface SecondaryProject {
   title: string;
   description: string;
   githubUrl?: string;
+  siteUrl?: string;
   tags: string[];
 }
 
@@ -479,6 +480,7 @@ export const secondaryProjects: SecondaryProject[] = [
     title: "Data Science Portfolio",
     description: "End-to-end data science projects: employee attrition prediction with an ANN, insurance cost estimation, and subscription prediction — built with Streamlit and TensorFlow.",
     githubUrl: "https://github.com/farrelfz/data-science-farrelfz",
+    siteUrl: "https://farrelfz.github.io/data-science-farrelfz/",
     tags: ["Data Science", "Python", "Machine Learning"],
   },
 ];

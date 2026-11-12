@@ -5,7 +5,7 @@ import { projects, secondaryProjects } from "@/data/portfolio";
 import { ProjectCard } from "@/components/sections/ProjectCard";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, Microscope } from "lucide-react";
+import { Github, Globe, Microscope } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 
 const ProjectsPage = () => {
@@ -64,15 +64,28 @@ const ProjectsPage = () => {
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-bold text-base text-foreground">{item.title}</h4>
-                        <a
-                          href={item.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${item.title} repository on GitHub`}
-                          className="-m-2 flex size-11 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          <Github size={16} aria-hidden="true" />
-                        </a>
+                        <div className="flex items-center gap-1">
+                          {item.siteUrl && (
+                            <a
+                              href={item.siteUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${item.title} live site`}
+                              className="-m-2 flex size-11 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                              <Globe size={16} aria-hidden="true" />
+                            </a>
+                          )}
+                          <a
+                            href={item.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${item.title} repository on GitHub`}
+                            className="-m-2 flex size-11 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+                          >
+                            <Github size={16} aria-hidden="true" />
+                          </a>
+                        </div>
                       </div>
                       <p className="text-xs text-muted-foreground leading-relaxed mb-4">{item.description}</p>
                     </div>
