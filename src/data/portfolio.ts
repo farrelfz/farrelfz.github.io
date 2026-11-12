@@ -425,6 +425,7 @@ export const projects: Project[] = [
       "Recipient of PMW UNJ Entrepreneurship Funding 2024",
     ],
     githubUrl: "https://github.com/farrelfz/fisikaseru",
+    siteUrl: "https://farrelfz.github.io/labs-fisikaseru/",
     color: "from-emerald-600 to-teal-700",
   },
   {
